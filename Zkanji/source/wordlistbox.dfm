@@ -1,0 +1,23 @@
+object fWordBox: TfWordBox
+  Left = 485
+  Top = 245
+  BorderIcons = []
+  BorderStyle = bsNone
+  Caption = 'fWordBox'
+  ClientHeight = 119
+  ClientWidth = 181
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  OldCreateOrder = False
+  OnMouseLeave = FormMouseLeave
+  OnMouseMove = FormMouseMove
+  OnMouseUp = FormMouseUp
+  OnPaint = FormPaint
+  PixelsPerInch = 96
+  TextHeight = 13
+end

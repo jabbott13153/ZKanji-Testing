@@ -1,0 +1,950 @@
+﻿CHANGES.TXT for Zkanji (c) Sólyom Zoltán, 2007-2013
+==========================================================================
+
+v0.731
+-Updated the word study group creation window.
+-Added a kanji handwriting input box for typing kanji in the word study group test.
+-Fields are shown for all meanings of a word in the dictionary. Previously the field was only indicated for the meanings if they differed from the field of the previous meaning.
+-Fixed: critical bug caused data corruption and program crash after updating to v0.73 from an older version, when the long-term study contained words previously not found in the updated dictionary.
+-Fixed: the "back" button on the kanji information window always cleared the displayed kanji, instead of showing the previous kanji or element.
+-Fixed: deleting the last meaning in the word editor dialog caused an exception which prevented the window and the program to close.
+-Fixed: in the dictionary update conflict manager dialog, the window wasn't painted correctly when removing words not found in the new dictionary and showing the text for the removal.
+-Fixed: in the popup dictionary the non-Japanese search text was not selected when the dictionary was shown.
+-Fixed: data corruption when answering in the long-term study list, if only a single element of the word was added to the list.
+-Fixed: allowing to check the minus checkbox for each item in the word review window after a round of gradual inclusion. This caused the test to never finish in the next round, asking the same item endlessly. Now at least 3 items must not be skipped from the next round.
+
+v0.73
+-Drop-shadow under the list of past kanji/kana searches window.
+-Forwarding mouse wheel scroll action to the window currently under the mouse.
+-Scrolling results with the mouse wheel in the handwriting recognizer and the similar kanji/part of kanji/kanji parts in the kanji information window.
+-Adding "http://" in front of dictionary web site URLs if missing to ensure that a browser opens the specified address.
+-The dictionary search history can keep many more searches. The exact number can be changed in the settings.
+-If not changing the search field text of the dictionary for a few seconds, the entered text is added to the search history. This behavior can be tuned in the settings.
+-Redesigned the "new word" dialog window and made the destination dictionary selectable.
+-Pressing keys after drawing on the handwriting recognizer window work like they were pressed in the kanji edit box.
+-Fixed: kanji/kana searches window didn't react to the mouse. (Error introduced in v0.719)
+-Fixed: pressing SPACE in the long-term study test window showed the answer even while typing the answer for "meaning".
+-Fixed: pressing ENTER in the long-term study test window while typing the answer for "meaning" made an error sound.
+-Fixed: not returning longer results when searching for inflected word endings in the dictionary.
+-Fixed: incorrect number of studied words in the long-term study list statistics window.
+-Fixed: pressing ESC while in a kanji/kana edit box didn't hide the information windows.
+-Fixed: the ESC key didn't clear the filters on the group list panel.
+-Fixed: not restoring size of the kanji list on startup if not starting the program in tray.
+-Fixed: invalid size of kanji list filter controls if starting program on screen, minimizing, showing the kanji list and then restoring the main window.
+
+v0.719
+-Checking dictionary changes on startup, showing dialog if word changes affect the user data and there is need for user interaction.
+-Brand new dictionary export and import:
+  * Entries can be exported from selected groups, or from the whole dictionary.
+  * Both word and kanji group export/import.
+  * Expanding dictionary from exported word entries, adding missing entries and resolving meaning differences.
+  * Creating new dictionary from exported file, or completely replacing an existing dictionary.
+  * Importing kanji definitions to a user dictionary.
+  * Aborting the import leaves the dictionaries untouched. (Actually they will be reloaded.)
+  * Wakan word groups no longer supported. Import with a previous version of the program before update.
+-There will be dictionary updates beside rare program updates. Automatically downloading new dictionaries.
+-New example sentences data format independent from the dictionary version making it unnecessary to update it when the dictonary changes.
+-Possibility to change words in the main dictionary:
+  * Add word not currently in the dictionary.
+  * Edit existing words.
+  * Revert edits to match the original dictionary, or delete added words.
+  * Dictionary updates don't corrupt edits.
+-Updated backup:
+  * User data backup at selectable intervals.
+  * Backups don't overwrite each other.
+  * Old backup files are deleted after a number of days, which can be configured.
+-The kanji, group or dictionary areas in the main window can be hidden by dragging the corresponding sizing bar near the edge of the window, or via the main menu.
+-Added katakana input to the kana edit box. Any syllable which contains an upper-case character will be converted to katakana.
+-Added kana input for てゃ,てぃ,てぇ,てゅ,てょ and でゃ,でぃ,でぇ,でゅ,でょ. tha, thi, the, thu, tho and dha, dhi, dhe, dhu, dho.
+-Tool windows, like the kanji information window, paint their border in different color when they are active.
+-When changing the word filters window's size, the controls area grows to fill the space.
+-Scrollbar thumb size reflects size of word list/kanji list windows.
+-Only real changes cause the user files to be saved to disk, instead of always saving everything when something changed or even after a dialog was shown.
+-Capitalized first letter of words in menu items.
+-Limited possible meaning count of words to 100.
+-Word meanings can be reordered in the word editor dialog.
+-It is not allowed anymore for a word to contain the same meaning twice. The word editor shows a message box when this happens.
+-Updated the settings window. Moved text (number) input boxes from the middle of text to the end of lines for better compatibility with planned internationalization.
+-Preventing changes to the data files while the settings window is open.
+-Example sentences file import from the Tanaka Corpus, if user can access data folder. (Requires admin privileges if program installed in Program Files.)
+-Switched from handling virtual key codes to characters where possible. Hopefully this will work for people not on QWERTY keyboards.
+-The handwriting recognizer is shown with the space key even while the list of word results is focused.
+-Custom textual data can be stored for dictionaries to be used for licensing information or list of authors. This information can be entered when creating a new dictionary or in the dictionary rename dialog.
+-The "dictionary stats" dialog has been renamed to "dictionary information". Besides statistics, it also displays the custom information stored for each dictionary.
+-Changed most exclamation marks to full stop/period characters in message boxes for a friendlier interface.
+-Random selection in word groups' word list control.
+-Added "Translate Kanji" menu item to the kanji information window popup menu.
+-Changed the order of "priority" menu items in the long-term study word list window, so the highest priority is at the top and the lowest is at the bottom.
+-Fixed: inserting invalid character for some roomaji combinations in the kana edit box. Namely any vowel version of vy, fy, wy and cy.
+-Fixed: minimizing and restoring the program while the handwriting recognizer window was active caused the recognizer window to appear without being connected to an edit box.
+-Fixed: the small pause button on the kanji information window stayed down indefinitely once it was pressed, even though the play or stop button was pressed too.
+-Fixed: access violation when multiple kanji are selected at the top and one is deselected at the middle with ctrl+left mouse button.
+-Fixed: pressing Ctrl+D in a kanji list with multiple kanji selected makes the list deselect all kanji, without leaving at least one selected.
+-Fixed: when trying to add new words to user dictionary, the add button stayed disabled even after filling in the meaning field. It only became enabled when changing something else.
+-Fixed: for some kanji where the KUN readings hanged over the bottom gradient in the kanji information window (i.e. 生), the readings hid the gradient with white background.
+-Fixed: labels for some word group options had the up/down resize cursor, and undefined behavior when clicking on them.
+-Fixed: typo in long-term study test window ("coldn't").
+-Fixed: memory leak when reading ini files.
+-Fixed: changing a font in the settings did not update the example sentences panel.
+-Fixed: not initialized an object which was holding points of strokes in the handwriting recognizer.
+-Fixed: access violation when trying to filter a word group's word list in the groups window.
+-Fixed: Used == instead of = when finding the reading of kanji (furigana) in words. The position of kanji within a reading block was not set in many cases. The algorithm still worked but less reliably.
+-Fixed: accessing the group of a dictionary being deleted, which caused an index out of bounds error.
+-Fixed: not repainting the kanji list background when it was resized.
+-Fixed: if a tool window (kanji info or clipboard viewer) was on screen when the main window was minimized, restoring the window caused the tool window to reappear with an unresponsive close button.
+-Fixed: not hiding the kanji hint tooltip when the control it is shown for becomes hidden.
+-Fixed: access violation when the example sentences panel listed sentences from a dictionary being deleted and the mouse moved over it.
+-Fixed: not hiding the "Selected Text" row in the popup menu for a word's selected part, when no items were available for it.
+
+v0.717
+-Changes on the groups list interface. The panel with the groups' list was made wider and the list fills the available space when the group list part is resized.
+-Maximized group name length to 255 characters and dictionary name length to 128 characters in every edit box.
+-Fixed: access violation when trying to disable or enable the handwriting recognizer of a kanji edit box. Appears as a message box during long-term study testing even when not using the handwriting recognizer.
+-Fixed: access violation when setting a new dictionary name in the "Add word to dictionary or group" dialog but selecting "No" in the query box shown.
+-Fixed: invalid access in memory when connecting to the update server, and reading the header that was sent back.
+-Fixed: incorrectly loading dictionary panel size on the main window.
+-Fixed: when showing a message box or query window and switching away from the program and back, the window was hidden behind the program.
+
+v0.715
+-Better Windows 7 integration:
+  * The program can minimize normally and not to the tray.
+  * Taskbar tasks list filled with commands. Popup dictionary and popup kanji list.
+  * When minimizing to tray by default, move zkanji to tray even for [windowskey+down] combination instead of the default minimize behavior.
+-Updates are downloaded and installed automatically if requested by the user, though still requires admin privileges.
+-Created installer.
+-Replaced old hiragana/katakana test with a new one.
+-Added kana writing test, where the user has to write the shown syllable with the mouse.
+-The popup dictionary can be moved freely.
+-Saving everything first when the program closes to prevent data loss on system shutdown.
+-Computing unique words for the dictionary statistics now gives exact number fast.
+-Kanji hint tooltip looks more modern with rounded corners and gradient background.
+-Fade-in and out animation for kanji hint tooltip window if allowed by the system-wide settings.
+-In the long-term study list window, the written word column can be selected for sorting.
+-Added character combinations to type しぇ, じぇ, ちぇ, ファ, フィ, フェ, フォ in kanji/kana edit boxes.
+-Not excluding example sentences just because one or two words were not found in the dictionary.
+-Showing sites list in dictionary popup menu for selected text.
+-Not showing hint in long-term study test when the word is written fully in kana and there is no kanji in it.
+-Ordering kanji "part of" list on kanji information window by kanji frequency.
+-Staying at the same example sentence when changing dictionary.
+-Looking up word in the dictionary when clicking on the kun reading in the kanji information window.
+-Instead of the . in the KUN readings of the kanji information view, the okurigana is written with a light blue color.
+-No beep when the kanji information window is selected and a key combination with the alt key is pressed. (To avoid beeps when the user merely selects a different dictionary.)
+-Changed the timeout higher in the update checker so the program won't start that often with connection timed out errors.
+-Starting syllable with 'l' character in a Japanese input box has same effect as 'x'. The next kana will be a small one.
+-Pausing long-term study test when a site lookup is started from the options menu.
+-Showing number of unique words that can be added to long-term study test when selecting new items to include.
+-Added menu item to Files menu to open user data folder in an explorer window.
+-The add new word dialog for user dictionaries allows editing a new word's kanji with the handwriting recognizer.
+-Fixed: zkanji didn't find main dictionary data when started in Vista/Win7 from program files as simple user
+-Fixed: for some kanji the kanji hint window wasn't tall enough for multiple lines of kanji readings.
+-Fixed: In the import words to long-term study window, the button to uncheck written items for words normally written in kana unchecked disabled checkboxes, which mark items that were already added to the long-term study.
+-Fixed: written form of items normally written with kana, having those unchecked by default in the import words to long-term study window, were also added to the long-term study unless checking/unchecking manually.
+-Fixed: incorrectly deinflecting adjectives, when a small tsu was inserted between the stem and the inflection. (i.e. 遠く returned same result as 遠っく)
+-Fixed: not saving window position and size changes when closing program from taskbar menu in single window layout.
+-Fixed: not allowing zkanji main window to act as an always-on-top window when it is restored from the tray.
+-Fixed: problem finding items in JLPT N and example sentences lists as they are organized by hiragana instead of romanized words.
+-Fixed: background showing through in the kanji radicals selection window.
+-Fixed: minimizing then restoring zkanji sometimes caused index out of bounds (-1) error and couldn't restore the program.
+-Fixed: border drawing of the kanji information/clipboard viewer/popup dictionary windows that either left trail on screen or left marks on the controls themselves.
+-Fixed: access violation in the popup dictionary when "Paste from clipboard when activated" is turned on and the text in the clipboard is longer than 1023 characters. This resulted in the popup dictionary to stop searching.
+-Fixed: access violation when first opening the stats window or choosing "generate word group" right at startup.
+-Fixed: changing a kanji definition from the dictionary caused a stack overflow and an error message.
+-Fixed: disabling readings click on kanji information window when window was shown from a dialog, to avoid errors.
+-Fixed: only showing kanji tooltip in kanji information window when it is allowed by the settings.
+-Fixed: didn't delete object after closing the site manager settings window, causing random access violation each time the program activated.
+-Fixed: when the readings/meaning view in the kanji information window is scrolled, the text readings are incorrectly updated to indicate mouse hover.
+-Fixed: in the kanji information window, for kanji with no ON or KUN readings, the space left out for the readings depended on some previously selected kanji, though there was nothing to write there.
+-Fixed: quitting a long-term study test before finishing all new items resulted in loss of data. The next time the test was started on the same day, no new items were included.
+-Fixed: Additional fixes for large screen font sizes. Kanji info window appears in a usable size. Correctly resizing columns of word list boxes. Normal size for the text in the word study group's review list.
+-Fixed: Access violation in some cases when trying to review words of word study groups.
+
+v0.71
+-Option to search in online dictionaries added to the dictionary popup menu.
+-Correctly finding the furigana for many words that contain numbers or wide English characters. (Only works when reading can be determined from all characters separately.)
+-Fixed: "Access violation in USP10.dll" that sometimes occured on startup and when showing the popup dictionary for the first time.
+-Fixed: when a single kanji is selected in the dictionary the popup menu shows the copy options for kanji instead of showing the copy options for selections.
+-Fixed: showing word examples of previous kanji in kanji group list when selecting a new kanji, if a filter string was entered.
+-Fixed: bad placement of some windows in a multi monitor environment. The kanji hint window always appeared on the main monitor and the handwriting recognizer window stuck to the window side.
+-Fixed: deleting items from filtered word group lists didn't work correctly.
+-Fixed: word filtering in kanji group or word group lists didn't give katakana results.
+-Fixed: in the kanji groups list window, when it is impossible to find the furigana of a word's kanji, the kanji reading always defaults to the first "reading" which is used for irregular cases, to prevent an exception to occur.
+-Fixed: pasting wide English characters to kanji input boxes always resulted in lower case characters.
+-Fixed: Sometimes the popup dictionary didn't search when typing in it.
+-Fixed: artefacts appearing in the text area of the update window when resizing.
+-Fixed: filter button wasn't unpressed when selecting another word in the example sentences.
+-Fixed: not freeing memory allocated when showing filters popup menu.
+-Fixed: allowed selection of non-kanji elements in the kanji information window even when the stroke order data was not loaded.
+
+v0.7
+-JLPT N levels for kanji and words.
+  *Added JLPT level to the Kanji Information window. (The old kyuu system is still kept, but called "JLPT (old)".)
+  *Indicating JLPT level for words in the dictionary (depends on setting. default: on)
+  *Changed settings window to include new kanji JLPT N level as selectable default data.
+  *Changed filter in kanji list to use kanji JLPT N level instead of old Kyuu level.
+-Example sentences work for all dictionaries (always gives the English examples).
+-Including words in dictionary search results even if a given inflection is only applicable to the second or third etc. meaning, but not the first one. (This was implemented in v0.591 but only when no kanji was in the search string.)
+-Completely reworked how word filtering works:
+  *Filter editor dialog shows filters in a tree view. Selecting/deselecting specific groups (i.e. verbs) possible with single click.
+  *Any number of user defined filters can be added. (Limited by memory and the number of possible combinations.)
+  *Popup menu shown for filter button on right-click. User defined filters have "include" and "exclude" options, and more filters can be turned on at the same time to narrow searches.
+-Added "To long-term" option to the dictionary's popup menu for adding words to the long-term study list directly from there.
+-Added shortcuts to "Add word to dictionary or group" window controls.
+-Added ~される inflection as alternative to ~せられる for -u verbs (except -su)
+-Added ちまう inflection to deinflection table.
+-Added てなさい inflection to deinflection table.
+-Added ておく/とく inflection to deinflection table.
+-Added りゃ inflection to deinflection table. (れば contraction.)
+-Instead of "potential / passive", only one type is shown when the inflection can't be the other.
+-Dictionary statistics showing more precise "unique word" count in dictionaries.
+-Added speed/display control panel to the kanji information window's normal (smaller) view.
+-Changed N mark for Jouyou name kanji to 名, not to confuse it with new JLPT N levels.
+-Allow non-kanji elements in the kanji information window to be selected from "kanji parts" when the appropriate box is checked in the settings. Hide these elements otherwise.
+-Multi check/uncheck items in the long term study-list word importer if clicked inside selection of several rows.
+-Added status bar to the "Import words to long-term study list" dialog, to help navigation.
+-Button to uncheck written form of words that are usually written with kana only in the import to long-term study dialog.
+-Popup menu for the example sentences panel to copy whole sentence or get kanji information, collect words for kanji etc.
+-New style popup menu in the dictionary and kanji list. Old one still available through an option in the settings.
+-Fixed: Kuten wasn't selectable as main reference for kanji (which is painted red in the kanji information window).
+-Fixed: When mouse wasn't moved away from kanji area in the long-term study test, the stroke order window didn't show up.
+-Fixed: saving stroke order file accessed invalid memory (9th byte for version string when only 8 bytes were present.)
+-Fixed: invalidating negative column index in custom word list controls didn't give error and accessed invalid memory. (It couldn't occur in practice but without fix it would have cause a bug later.)
+-Fixed: in the classical 2 tab of the radicals window, the tooltip was partially hidden by the mouse cursor.
+-Fixed: in the classical 2 tab of the radicals window, the tool buttons' panel was placed at the bottom of the window for the first time it appeared.
+-Fixed: in the groups window's words tab, when no word was in a group, the "word down" button became enabled.
+-Fixed: in the groups window's words tab, the enabled state of the button for adding words to the long-term study list was inconsistent.
+-Fixed: not allowing double "potential" inflection. Also 出来る no longer shows potential form which is grammatically incorrect.
+-Fixed: when in the kanji list the "oku." checkbox was checked and a kun reading was given in the filter, the returned list of kanji didn't contain those kanji, that had the given kun reading, but only without okurigana.
+-Fixed: deinflection of 来る verbs behaved inconsistently depending on kana usage.
+-Fixed: not updating view when searching in the long-term study list window, when number of items were the same even though the words in the list changed
+-Fixed: vocabulary adding form was incorrectly sized when switching between dictionaries.
+-Fixed: resetting kanji reference order in the settings window caused changes even if window was closed with cancel button.
+-Fixed: showing same word twice in dictionary when it was an adjective and an auxiliary adjective as well. (For example 欲しい)
+-Fixed: not updating word groups when moving several words up in the list.
+-Fixed: written form of words that have no kanji were added to the long-term study list.
+-Fixed: popup dictionary window became hidden when setting filter that took long to popuplate in the browsing dictinary mode (or generally when something took long and a message was shown to warn about that).
+-Fixed: incorrectly placed bold text in update window.
+
+v0.593
+-Small change in long-term study list test question spacing. Decreased probability of items that were shown only a little while ago.
+-Added Kuten code for the kanji list filter and the kanji information window's reference number list.
+-Fixed: Reverted socket handling to old non-Unicode version to be compatible with older OSs and Wine. The Unicode version made Wine freeze.
+-Fixed: accessing invalid memory at startup in single window mode, that sometimes caused an error message.
+-Fixed: couldn't load suspend word tests, resulting in an ugly error message and freezing of zkanji at the end of a test round.
+
+v0.591
+-Made it slightly easier to recognize the く kana.
+-The update window is resizable.
+-Better placement of the kanji radical character in the kanji information window, when it's visible.
+-Disabled autorun checkbox in the settings window instead of showing an error message when the program couldn't read the registry. This is mainly an improvement for Wine.
+-Changed Japanese font handling to make Japanese characters show for systems that don't have the default Windows fonts.
+-Disabled IME in kanji input boxes, so text can be entered normally even when the input language is Japanese.
+-The popup dictionary no longer shrinks when double clicking on its border.
+-In the long-term study list, students can select the "main hint" for each item separately, with a default value that can still be changed in the settings.
+-Small icons show the question and main hint for every item in the long-term study list windows.
+-Including words in dictionary search results even if a given inflection is only applicable to the second or third etc. meaning, but not the first one.
+-Fixing items total and items learned in the statistics of the last day in the long-term study list on every startup if the values differ from the real count.
+-Fixed: ON readings in the kanji information window were drawn at an incorrect position when the radical was turned on or off.
+-Fixed: Systems with decimal symbol different from English . couldn't import exported dictionary files.
+-Fixed: Hiding some windows, including the kanji information window and the popup dictionary under some systems (eg. Wine) caused an exception and further problems.
+-Fixed: When no Japanese fonts were present in the system, the program caused error messages.
+-Fixed: Changing last answer in the long-term study list to "Retry" incorrectly modified indicated item numbers.
+-Fixed: Only loaded settings after dictionary and user data was loaded, even though there are parts of the dictionary loading that depend on the current settings.
+-Fixed: Didn't hide zkanji windows when only the readings test was started in the long-term study.
+-Fixed: Shortcut conflict in the long-term study list window. Pressing numbers switched between tabs but also changed priority in the word list of untested words.
+-Fixed: error in clipboard handling when clipboard has an unexpected error in the system and we are trying to paste from it.
+
+v0.59
+-Unicode support.
+  * Mixed language characters possible in the dictionary definitions.
+  * Japanese or other characters in group names.
+  * Works in dictionaries with name containing unicode characters.
+  * UTF-8 ini file format.
+-Removed compatibility with ancient word study group formats. If a message is shown about this on startup, try loading the data with the previous version (v0.577) to convert old user datafile to new format.
+-Items answered with "Try again" will now appear with red border in the long-term study list's test, just like mistakes.
+-Abort during print preview generation.
+-Disabling ClearType for print preview and printing.
+-Including Jouyou grade and Frequency in selectable single kanji information in the settings.
+-Highlighting selected kanji information in the kanji information window.
+-Added settings to limit item deck in the long-term study list after giving a specific answer in the test.
+-Changed algorithm for computing new interval for repetition in the long-term study.
+-Transparency for the popup dictionary. Its level can be changed in the settings.
+-Added new items in the dictionary statistics window.
+-Rearranged "Generate word group from kanji" window.
+-Recounting intervals for words in the long-term study list when older user group file version detected.
+-Updated looks of kanji radicals window.
+-Saving and restoring kanji readings test window size in the long-term study.
+-Rearranged the kanji readings test window.
+-When giving correct answer in the kanji readings test of the long-term study, the answer is displayed with green letters.
+-Changed the About window.
+-Showing words in readings test with green/red background, if the words were new/incorrect.
+-Reseting kanji example words search filter in the group window when switching to a different kanji.
+-The recognizer window, when moved during a long-term study test, remembers its position till the end of the test, and then restores it to its original place.
+-Ctrl+arrow in the dictionary search field for Japanese brings up previous searches like a real combo-box would.
+-Showing tested word's types in the long-term study test window after an answer was given.
+-Fixed: Removing words corrupted word study groups.
+-Fixed: Changes were not saved in the long-term study list, when quitting the program right after changing something.
+-Fixed: Moved radical 瓜 to the start of 6 stroke radicals list in the multi-radical search window.
+-Fixed: Holding down a mouse button while moving the cursor to the left out of the dictionary list cased an error message.
+-Fixed: Memory corruption after answering the first question in the long-term study list. This could cause random errors.
+-Fixed: When the settings for the long-term study test's tested readings was set to "None", the items to test in the readings test window was -1.
+-Fixed: Selecting "Try again" in tests increased the value of "tested items" in the statistics even several times for the same item.
+-Fixed: While organizing words in new word study list, removing duplicates could cause endless error messages, making zkanji unusable.
+-Fixed: Several memory bugs that didn't seem to cause any problems, but turned out to be extremely dangerous in some cases.
+-Fixed: Only the first letter of the inflection was shown in the dictionary when entering inflected words with inflection indication enabled in the settings.
+-Fixed: Disabling printing buttons of the print preview window while generating preview.
+-Fixed: When the first word ever added to a user dictionary was in a word group, double clicking on it didn't do anything.
+-Fixed: Unnecessary recounting filtered words in browse mode when the filter wasn't changed.
+-Fixed: The information in the dictionary statusbar was not always updated.
+-Fixed: Renaming a dictionary didn't rename all user files.
+-Fixed: Didn't rename menu item for switching to user dictionary on the group list window when renaming dictionary.
+-Fixed: Couldn't add more than 10 example words for each reading of a kanji to the long-term study list.
+-Fixed: In the long-term study list the numbers 1 to 3 acted as shortcuts even when in an edit box. From now on, only ctrl+number works in that case.
+-Fixed: Names in the kanji radical selector's classical2 list were often half hidden when they were long.
+-Fixed: Long-term study list window column sizes were reset to default after changing settings, even if font sizes remained the same.
+-Fixed: Filtering the example words for kanji removed their red/yellow color from the list.
+-Fixed: Changing previous answer during long-term study test to "incorrect" could modify that item's deck and score, like it haven't been answered at all.
+-Fixed: Up and down arrow keys didn't move focus to dictionary's word list in browse mode, when the search edit box was selected.
+
+v0.577
+-Option to change the answer given for the previous word in the long-term study list during testing, to fix user errors. Works similar to Undo+Answering-something-else.
+-In the long-term study list changed the time estimate and time-spent-on-item measuring method. Time estimate now works with the last 100/255 (repeats/time spent) number of test items. Anything older gets discarded so the time stats is updated.
+-Disabled popup menu in the long-term study test for the recognizer.
+-Right-click menu on dictionary search direction buttons for switching between dictionaries. (when user dictionaries are present)
+-"Pause" button on the long-term study test window.
+-Words added to search history dropdown list when navigating between them in the example sentences.
+-Fixed: showing the kanji recognizer window even after quitting the long-term study test.
+-Fixed: Several memory access overrun errors.
+-Fixed: incorrect sizing of the long-term study test window when showing it for the second time.
+-Fixed: in the long-term study test the indicated interval and the real interval were different when the item wasn't answered correctly the previous day even once.
+-Fixed: when a word was tested twice with different questions, it wasn't always included in readings tests, depending on the settings and the given answers.
+-Fixed: word tested twice was sometimes shown twice in the readings test.
+-Fixed: in the long-term study list, items with incorrect answer and no correct one (when exiting the test early) had their interval and due values shown incorrectly in the list.
+-Fixed: the daily long-term study statistics incorrectly handled the count of learned items. (Only the most recent test's statistics data is updated though.)
+-Fixed: in the long-term study list moving tested item back to queue didn't update the readings test to reflect the changes, and could possibly corrupt data.
+-Fixed: in the long-term study list making change to an item's priority without other action caused the change to be lost if quitting zkanji.
+-Fixed: word list had no scrollbars on the "Generate word group from kanji" dialog window.
+-Fixed: after changing to a different dictionary while in continuous browsing mode with a filter on, the listed words were not matching the set filter.
+-Fixed: changing alphabetic ordering in the settings didn't sort the word list in continuous browsing mode with a filter on.
+-Fixed: access violation when creating a fresh word study group, that could result in full user data loss.
+-Fixed: error when deleting last added word to user dictionary, when the word was visible in the dictionary result list.
+
+v0.575
+-Kanji readings study after long-term study test, depending on the current settings.
+-Changed the item order when ordering by added date in the long-term study list window. The later date will appear first by default.
+-Changing item data in the long-term study list window won't scroll the selected item to the center of the list anymore.
+-Kanji stroke order diagram in the long-term study test replaces the kanji information window that would give too much information during testing.
+-In the long-term study list for items below deck 4, even if the time passed since the last test is more than the original interval*1.6, the deck won't decrease.
+-Clicking on the ON reading of a kanji in the kanji information window fills in the "readings" input field of the kanji list and filters the list.
+-Changed the handwriting recognizer to make it easier to recognize kanji with only little differences to the handwritten form.
+-New menu item in the kanji recognition window's popup menu to show kanji information.
+-Fixed: removing didn't work for items in the long-term study list, when they were not included in the test.
+-Fixed: the close button on the kanji information window is now painted correctly even when themes are not enabled.
+-Fixed: didn't show full update information when updates were found on automatic check. In some cases the program crashed.
+-Fixed: some window controls (buttons etc.) didn't work on secondary displays left or above the main monitor (in desktop coordinates).
+-Fixed: attempting to copy kana from the kanji recognition window caused an error message.
+
+v0.573_20110227
+-Fixed: resizing of word list columns were disabled for all lists.
+
+v0.573_20110226
+-Fixed: not showing full written form of the word in the long-term study list's test.
+
+v0.573
+-Smoothed (anti-aliased) strokes in the kanji stroke order display and animation. (Might not work in emulated environments.)
+-The different kind of strokes in the kanji stroke order dialog were made visually different. 
+-Hitting enter in the example selector input box (the one for finding example words in the dictionary) acts like pressing the jump button.
+-Disabling the find button on the kanji information window when more kanji are selected.
+-Added setting to test new items before any other in the long-term study test.
+-New list in the long-term study list window for displaying items tested the last day.
+-New setting to automatically go to the last tested items' list after a test.
+-Keyboard shortcuts for the long-term study list window.
+-Restored frequency number to the kanji information window's reference list.
+-Cloned menu items between popup menus of the kanji information window.
+-Changed program icon.
+-Possibility to set a custom flag for the user dictionaries, by placing a bitmap with the same name in the data folder. The bitmap must be 32x16, and the color at the bottom left pixel is set as transparent.
+-Wakan vocabulary category import to given dictionary. Skipping words that do not exist and adding all meanings to groups for those that do.
+-Small change in the handwriting recognizer's weights. Mainly less importance for stroke position, as it was overweighted.
+-Fixed: visual glitch of the kanji information window. By double clicking a kanji the visible info window flickered for a moment and its borders were not rounded anymore.
+-Fixed: Correct sizing of the add word dialog window, when there is no point in displaying a meaning list for custom dictionaries.
+-Fixed: the add word dialog window was resized when the custom meaning was changed.
+-Fixed: removing a stroke when drawing in the recognizer window gave different results compared to the first time the last stroke was drawn.
+-Fixed: replaced kanji drawing in the kanji definition window, to not use clear-type when it is not wanted.
+-Fixed: error when the similar kanji list was displayed for some kanji.
+
+v0.571
+-New pop-up menu item in the long-term study list for increasing and decreasing the deck of each item, changing the interval when the item will be tested next.
+-New pop-up menu item in the long-term study list to reset selected items, removing their study statistics and putting them back to deck 0.
+-New pop-up menu item in the long-term study list for adding words to a word group.
+-Fixed: the kanji information window didn't show the hint for kanji in panels, before switching to a different dictionary.
+-Fixed: The update checker window didn't work correctly when trying to open it while update checking was in progress.
+-Fixed: incorrectly saving user dictionaries, when the last kanji has a user defined meaning.
+-Fixed: Update from v0.55 to v0.57 corrupted user dictionary kanji data. This version also fixes corrupted data after the fact.
+-Fixed: Checking for updates when version number is similar showed update when there was none.
+
+v0.57_20110203
+
+-Fixed: Painting the background of the answer box white in the long-term study test, if themes are disabled.
+
+v0.57
+
+* WARNING: Changed dictionary file format! Data will be converted automatically, but this is not guaranteed for future versions when they load old data! - if you always update to the latest version in time, there will be no problems.
+
+-The handwriting recognizer window can recognize hiragana / katakana characters and the kurikaeshi symbol. Because of this some deeper changes had to be made in the recognizing algorithm which might require fine-tuning.
+-Handwriting recognizer now recognizes some kanji better.
+-Updated the dictionary format. It now accepts words with non Japanese characters in the written form, if those are double byte unicode characters from the Japanese character set (double byte romaji, numbers, brackets etc.).
+-Searching for Japanese symbols (eg. the kurikaeshi symbol), wide characers allowed in the dictionary search.
+-Updated example sentences import, so now many sentences that were left out are included.
+-Updated kanji data from the latest KANJIDIC. Two more kanji are now on the list.
+-Changed algorithm for ordering words in the browse dictionary mode. The words will be correctly ordered in alphabetical order. Prioritizing hiragana if the reading of two words can be romanized the same way.
+-In the group list window's kanji reading list, the okurigana part is now indicated with a light blue text, when kun readings are not grouped.
+-Added filter for the kanji example words on the group list window's kanji groups panel.
+-Ctrl-F shortcut for filters in the popup dictionary.
+-Ctrl-L shortcut for the long-term study list.
+-Reorganized main menu in the docked and separate window interfaces, so the docked menu can be used without having to browse several sub-menus to reach some functions.
+-Generating word groups shortcut works for both the kanji list and group list on the docked interface, depending on which part of the interface is currently active.
+-Dictionary menu visible in the group lists window to have a near standard menu interface in all windows.
+-The filter dictionary results button will be unpressed when all filters are turned off for the dictionary.
+-Added an optional helper grid to the recognizer window.
+-Changed grid in the kanji information window to be more helpful.
+-Warning window for too many due items in the long-term study list. Its showing interval can be controled from the settings.
+-Changes to the settings window, mainly for the changed long-term study list.
+-Added several message boxes to display if user files loading goes wrong.
+-The long-term study test is automatically suspended after a given time if no button was pressed.
+-The automatic update notification window's text format changed to present version information in a better way.
+-Fixed: Removed duplicate shortcut text for dictionaries from dictionary menu.
+-Fixed: The start practice button in the kana practice window didn't become enabled for too few checked boxes.
+-Fixed: Checking for app folder when zkanji is started from the Program Files to be able to save ini files even when the users are not admins themselves.
+-Fixed: Error message appeared and the position in the word list wasn't set when the text entered in the dictionary search box was not in the dictionary, and the user tried to switch to browsing mode.
+-Fixed: Removed resize grip from the dictionary window, which was present even when the window was maximized.
+-Fixed: Adding words as the example for a kanji with the space key, added the word to the currently selected kanji reading, and not the correct reading when it was not selected.
+-Fixed: removed maximize and minimuze button from the dictionary stats window.
+
+v0.57b
+***Test version not intended for everyday use. The file format might change
+***in the final v0.57, which means that though the data from v0.55 will be
+***converted to work in it, the converted format won't be usable in the final version!
+
+-Reworked the long-term study list:
+  * Words are added, not kanji.
+  * Test can be closed before all words are tested without losing data.
+  * 4 buttons instead of the 2 used previously. One button for half forgotten items, another for too easy ones.
+  * Meaning can be studied, not just the written word form or the kana reading.
+  * The student can choose the parts of words to study when adding them to the list. The other parts can be added later.
+  * In the previous version kana reading could be typed in as the answer. Now the written part can be typed too, using the kanji recognition.
+  * If the student couldn't answer a question, that item is asked much later into the test than before mesured in minutes and not just randomly added somewhere.
+  * The test can inform the student after a given time was spent on testing. Same for number of tested items.
+  * Better control of what is tested and when, with a priority based system.
+-Filtering (hiding words that do not match a set filter) now works when browsing full dictionary (f4).
+-Added filter button to the popup dictionary.
+-Dictionary remembers word that was highlighted when switching between dictionaries or changing filters.
+-A plus sign indicates that a word's meaning is in a word group, when this option is set.
+-Saving and restoring the size of the Add word to vocabulary window.
+-Reorganized the Generate word group from kanji window.
+-Reorganized the kanji information window. Changed position of the Stroke Order Diagram buttons and and the look of the whole window. Added a new option in the settings to change which information is visible, and to reorder how they are shown.
+-Added a right-click menu to copy the visible kanji and all kanji reference numbers to the clipboard.
+-Added a status bar in the clipboard window to show the number of characters copied.
+-A unified look and feel for most windows when themeing is enabled. Also if no themeing is used, the windows won't be shaded.
+-When the kanji list is focused it stands out more compared to when it is not, because the unfocused list's highlight color is lighter or darker, depending on the background.
+-Kanji now updates in the kanji information window when the user changed some filters in the kanji list.
+-Single click restores zkanji from the tray.
+-The shortcuts for changing to a dictionary won't show up in the system tray menu.
+-Added Shift-JIS and EUC-JP encoding value to the kanji information window and also to the kanji hint window. The Kanji list can be filtered with these too.
+-Dictionary word list won't flicker when switching to browsing mode from J-E / E-J modes.
+-Changed how the topmost windows are handled (once again). This might cause unexpected behavior, eg. the kanji info window stays on top of other windows, or other strange things.
+-The search field of the dictionary now accepts full-width romaji and numbers, Japanese brackets etc. THIS IS EXPERIMENTAL UNTIL THE DICTIONARY IS UPDATED WITH WORDS THAT CONTAIN SUCH CHARACTERS.
+-Fixed: button images in the long-term study review window no longer have bright edges when the background is dark. The icons are drawn with alpha blending. (This window was removed from the
+latest version, but might be restored later.)
+-Fixed: when adding/changing/deleting words the dictionaries didn't appear updated. This was rarely apparent though.
+-Fixed: sometimes the text color wasn't visible enough when the color scheme was changed. 
+-Fixed: column sizing problem when the meaning column was made too small.
+-Fixed: Some items were added twice to the old version of the long-term study. The extra versions are dropped in the conversion to the new long-term study.
+
+v0.55
+-Added option to automatically check for updates.
+-Kanji line is now shown at a larger size in word tests.
+-Long-term study window reopens after a finished test on the statistics page.
+-New setting for long-term study test to set the interval before an item is asked again if it was incorrectly answered.
+-Added a "back" button to the long term study list review window when new kanji was selected for the day's test.
+-Small change in the long-term repetition algorithm. If answered correctly, those items that were late will count like they were exactly on time.
+-Reorganized the settings window.
+-Kanji information menu item added in the dictionary's Japanese search field's popup menu.
+-Added online word lookup for words, that are entered in the dictionary's search field. Currently reached from the input box's pop-up menu.
+-Fixed: Importing exported words with more than 3 meanings resulted in error message even when there was no error in line.
+-Fixed: Replacing old user or base dictionary with new one with missing words caused serious data corruption in group data.
+-Fixed: when the custom user dictionary was replaced by a different one, the selected example words for the kanji became corrupt, affecting their addition to the long term study list.
+-Fixed: long-term study test was started even when no words were selected for study on a given day.
+-Fixed: Input query dialog boxes were hidden behind the main windows when switching to another application and back.
+-Fixed: Exporting and importing dictionary on a different locale.
+-Fixed: Switching dictionary didn't change the meaning in the kanji information window in some cases.
+-Fixed: Dictionary delete didn't work because of list index out of bounds when removing menu items for the dictionary.
+-Fixed: In the user dictionary of some languages the search didn't work for most of the words.
+-Fixed: Word delimiter characters are now computed at startup with the ispunct windows function.
+-Fixed: When a user dictionary is selected, the kanji definitions on the kanji tool-tip window are shown accordingly even on the kanji information window.
+        +same for the kanji candidates in the recognizer window.
+-Fixed: kanji information window border redrawing. The border didn't update when it was resized near the bottom of the screen, and never in Windows Vista and newer.
+-Fixed: the kanji information window didn't change the language of the meaning text when changing the language in the popup dictionary.
+-Fixed: access violation (usually without crash) after editing added word in user dictionary.
+
+v0.537
+-Allocated statistics window memory is freed up when changing tabs in the long term study list to avoid memory problems.
+-Windows outside the visible desktop area are positioned back at startup.
+-Added hint indicating shortcut keys to the dictionary buttons.
+-Dictionary selector shortcut keys work in the clipboard viewer and kanji information windows too.
+-Fixed: Character for decimal sign is now taken from current locale.
+-Fixed: zkanji froze when the single window was resized on a system with thinner border than 8 pixels.
+-All window constraints were changed to use the system theme settings for the border thickness.
+-Fixed: The dictionary never found words with the kanji meaning "Asia".
+-Fixed: some compatibility errors with Vista/Windows 7
+
+v0.535
+-Active control remains active after minimizing and restoring zkanji from the tray.
+-Fixed: Copy from the kanji list sometimes caused an error message.
+-Fixed: In the long term study list the new excluded percent of errors was incorrectly shown.
+-Fixed: In the long term study list, the review window after the test didn't resize its columns when the row size was set to large in the settings.
+-Fixed: Renaming a user dictionary caused an error message.
+
+v0.533
+-Selected dictionary's name is visible on the title bar of the single window mode.
+-Pressing Ctrl-c in the kanji list of the Kanji list and the Groups list windows copies the selected kanji to the clipboard.
+-Showing the progress of loading at startup.
+-New keyboard shortcuts for the dictionary windows:
+  * The '+' key writes the currently selected kanji from the kanji list to the search field.
+  * F5 shows or hides the example sentences.
+  * F6 Toggles the "Any start of word" button.
+  * F7 Toggles the "Any end of word" button.
+  * F8 Toggles the "Inf" button showing or hiding the word inflections/conjugations.
+-Word frequency symbol and color can be changed in the settings.
+-The word list window shows a hint to indicate the frequency of words when the mouse is over the popularity column.
+-Added classical antialiasing option to most kanji fonts (available on the Fonts panel of the settings).
+-Fixed: Added new kurikaeshi symbol to the accepted Japanese characters.
+-Fixed: User dictionaries were incorrectly saved when there were words containing the last kanji in the list.
+-Fixed: Accented characters were incorrectly converted to UTF-8. (This bug was introduced in v0.531)
+-Fixed: Deleting a kanji group made zkanji to crash or get into an infinite loop.
+-Fixed: zkanji dictionary date incorrectly saved and shown in statistics window.
+-Format changes: (All affected files are updated automatically without any data loss!)
+  * Long-term study profile data is now saved in a separate file named zkanji.zsp instead of user dictionary files.
+  * Words have a new tag for name codes in name dictionaries.
+
+v0.531
+-Fixed: Disabled the recognizer window for edit boxes that do not accept kanji and/or not have a recognizer button.
+-Fixed: In single window mode the kanji information and clipboard view windows stayed on top of other programs even when zkanji wasn't in the tray.
+-Fixed: Error occured at startup causing the program to freeze in some cases.
+
+v0.53
+-Added single window mode where all controls from the three main windows appear on a single window.
+-Customizable colors for windows that otherwise used fixed colors before.
+-Fonts that only have unicode names (eg. with Japanese characters) are excluded from every font listing in zkanji because they cannot be used.
+-The kanji handwriting recognition window can remember its size and position if the appropriate options are set.
+-Changed the layout of the settings window to make place for the kanji handwriting recognition window settings.
+-Moved the stroke order element editor to debug mode only because it is of little use to most users.
+ *Element format and element stroke order editor was changed to include a kind of element repository for grouping elements by type or meaning.
+ *Merging of elements are now possible.
+-Fixed: Disabled the minimize button of the Long-term study list.
+-Fixed: The kanji list stopped refreshing the list when it was set to only show kanji in the clipboard and it changed appearance (eg. for popup mode).
+-Fixed: The border for Japanese editboxes was not updated when the editbox was resized leaving ugly marks on the border.
+-Fixed: When the restore window positions option was turned off, some sizes were not initialized.
+-Fixed: sometimes when the program closed, it tried to access a freed resource causing an error.
+-Fixed: In the stroke order element editor when changing element, its parents were not updated correctly with the recognition data.
+-Fixed: In the stroke order element editor setting an empty element as part of another was possible. Also there is no way any more to add new variant to an element while it has an empty variant.
+-Fixed: In the stroke order element editor navigating to a part of an element caused an error message in some cases.
+
+v0.51
+-Added copy and append options to kanji info popup menu for similar kanji, kanji parts and part of kanji. Also added popup copy and append to stroke recognition window.
+-Lowered penalty for not yet drawn strokes, so the recognizer finds possible candidates earlier.
+-Fixed: atan out of range error during stroke order recognition (giving zero to arctangent).
+-Fixed: the element editor didn't select element parts when the selection rectangle fully overlapped them.
+
+v0.5
+-Added handwriting recognition for jouyou kanji and some more! Draw a kanji with your mouse or tablet and select the best match from the listed candidates.
+(The stroke order database can be edited with the built in editor but export/import and sharing is not possible yet so only use it for experimenting with the controls.)
+-Replaced old program icon.
+-Thin scrollbar's thumb size is set according to the size of the area outside visible range.
+-When zkanji is minimized to the system tray and a modal window is visible, clicking on the icon gives focus to the topmost zkanji window instead of showing the tray icon menu.
+-Changed stroke order database loading order. First tries to open the last edited stroke order data and if that's not possible reverts to the original.
+-Changed appearance of kanji scroll controls in the kanji information window.
+-Fixed: Incorrect handling of thin drawn scrallbar that didn't follow the mouse cursor correctly.
+-Fixed: error that caused a message to appear when more than one kanji were moved in the study groups window, and the last kanji on the list was selected as well.
+-Fixed: Hidden memory errors in the stroke order editor.
+
+v0.391
+-Many improvements of the custom dictionary import functionality:
+  * Separate word groups for new and modified meanings.
+  * Word group creation can be selected for every import mode.
+  * Matching meanings skipped when importing words to dictionary. Every meaning of the modified words were imported before, even those that matched.
+-Double-click selects whole text in kana edit boxes (eg. dictionary search bar).
+-Added new setting to automatically start zkanji on system startup.
+-In the stroke order editor deleting, adding new strokes and changing an element's standalone status updates the value of the centrepoint edit box and also enables or disables it as needed.
+-Saving the long-term study list edit window dimensions when the "Restore last window positions" is checked in the settings.
+-Made stroke width of stroke order diagram animation thinner in the kanji info window.
+-New option in the kanji info window to indicate starting position of strokes by a red dot.
+-New lines no longer hide stroke numbers during stroke order diagram animation when the line would overlap with the number.
+-Tweeked stroke order diagram drawing speed and shadow position.
+-Added first user word and kanji group export to csv file to the study groups window menu. The different types of data might be exported into separate files later. 
+-Fixed/Hacked: Minimizing then restoring a maximized main window caused the window to lose its saved size. Thus restoring such window caused it to take up all screen like it was still maximized.
+-Fixed: Moving selected kanji to group created duplicate group when case of string was different.
+-Fixed: group rename and creation now doesn't care for the differences in the case of letters in the group names.
+-Fixed: Some windows revealed a scroll bar after minimizing and restoring zkanji when the bars should have been hidden.
+-Fixed: Saving the popup dictionary size and position even when it wasn't hidden before the program exits.
+-Fixed: The grid showing a list of kanji was not updated correctly when eg. the sort order changed in the Kanji List window.
+-Fixed: Some GUI elements didn't reflect font settings changes immediately.
+-Fixed: An error occured when deleting the last variant of an element.
+-Fixed: Deleting an element variant in the stroke order diagram editor didn't work in some cases.
+-Fixed: Won't set shown kanji background in the stroke order diagram editor when clicked outside the parents list.
+-Fixed: In the kanji stroke order diagram editor, changing element to standalone didn't use centrepoint of elements inside it and the stroke order was rendered wrong in such cases.
+-Fixed: Zkanji wasn't hidden in tray at startap when the "Always start in system tray" option was checked, unless the "Remember tray position" was also checked.
+-Fixed: Long-term study edit window statistics didn't correctly scroll to end at some form sizes.
+-Fixed: When the kanji info window was visible it covered the hint messages and the kanji back history.
+-Fixed: Height of kanji info window incorrectly set when an option is enabled and the info window is resized to its small size.
+-Fixed: adding definition to a kanji in a user dictionary didn't remove the small 'x' symbol from kanji lists.
+-Fixed: Kanji hint didn't hide when a modal window opened, hiding part of it.
+-Fixed: Dictionary export file name extension was incorrectly set to .txt.
+
+v0.39
+-Added a stroke order editor, because while the Taka database is very useful, I didn't like how some stroke order animations look like. It's also possible to add stroke order to kanji that didn't have it before.
+-Changes in the stroke order diagram file format. Still loads old version if needed. (old: no version, new: v1)
+-Showing/hiding columns in the long term study word statistics.
+-Added sorting of tested words in the long term study window.
+-Very slow ini file writing has been replaced with another method that keeps every value in memory, thus greatly reducing program shut down time. (What took 4 seconds previously now takes less than half a second.)
+-In the Redefine Word window when a change is saved the full text is selected in the meaning edit box for easier re-edit.
+-Message box window is correctly staying on top when switching away from zkanji and back.
+-Fixed: Kanji information popup comes up in front of the popup dictionary even for the first time.
+-Fixed: when deleting kanji from the long-term study list it was possible to also remove words from the list that were linked to other kanji as well.
+-Fixed: sometimes there was an error when the user quit the program with no message box or any other sign only the system beep. It didn't cause any harm but it was annoying.
+-Fixed: stroke order diagram didn't play for one kanji.
+-Fixed: saving empty string for meaning in the Redefine Word window should have been forbidden.
+
+v0.37
+-Wakan file import to custom dictionary.
+-The checkbox "Suppress log messages about new words" in the dictionary import dialog is now checked by default.
+-Added dictionary selection combo box to the Import words dialog.
+-Dictionary export version number handling changed. Only accepts floats with the decimal point "." independently of current locale.
+-Moved file open dialog for importing words to the Import words dialog.
+-Errors in the word import message box are now shown red.
+-Fixed: Menu shortcuts for dictionaries (Alt+Number) in the main menus are updated when a user dictionary is deleted.  
+-Fixed: word usage was shown as "obscene" when it should have been "obscure".
+-Fixed: word usage was shown as "male slang" when it should have been "manga slang".
+-Fixed (hopefully): The Japanese characters didn't show up correctly everywhere. 
+
+v0.351
+-Fixed a bug which caused lock-up at start in some cases.
+
+v0.35
+-Show/hide example sentences button is disabled when no example sentences data file found.
+-Improved behaviour of example sentences word popup and made the code simpler.
+-Added popup menu for kana edit boxes to cut, copy, paste, delete and select text.
+-Added new option to the long-term study settings page to select which kanji readings are tested.
+-Added possibility to suspend a long-term study test and resume on the same day. The test is automatically aborted if the day passes.
+-Added keyboard shortcuts for the popup kanji list to change selected dictionary or open the popup dictionary.
+-Changed backup process for user dictionary and group files. The backup is created on startup when the file was successfully loaded. No additional backup takes place so as not to overwrite the good data.
+-The long-term study is now aborted when a tested word is removed from a user dictionary.
+-Clipboard and Kanji information view no longer gain focus when they first appear.
+-Added close button to the clipboard view window, which has a custom border.
+-Added filters for kanji in the long-term study list window to make finding them easier when there is already a lot in the list.
+-Changed kanji list window filter behaviour to keep listed kanji visible while entering consonants (=not finalized kana syllables).
+-Fixed interface bug of the status bar in the dictionary window. Changing the dictionary when in continuous browsing mode now updates the status bar.
+-Fixed bug of menu that lists words from the example sentences. The menu was not hidden when another window gained focus.
+-Fixed bug of long-term study list, when a word was removed from the dictionary but the study list didn't update correctly to reflect this change.
+-Fixed crash in kanji groups. zkanji crashed when multiple kanji were selected while the position in the kanji word list was near the bottom.
+-Fixed crash that occured in some circumstances when a user dictionary was selected.
+-Fixed user dictionary deletion bug which caused an error message.
+-Fixed word-grid bug, when the cursor didn't change back to the arrow icon and one could still resize columns long after the cursor left the header.
+-Fixed interface bug of kana practice window. When no hiragana was selected but some katakana were, the start button wasn't enabled.
+-Fixed bug that occurred when adding kanji to a group of a different than selected dictionary.
+-Fixed copy-paste problem that didn't let the user paste a Japanese long vowel (dash) or other non-kana/non-kanji Japanese characters.
+-Fixed interface bug in the kanji list window where the filters were checked automatically even if the given field was deleted.
+
+
+v0.333 - ZKANJI BECOMES OPEN-SOURCE!
+-Modified code to be open-source compatible. Removed any third party code and filled the holes with my own. (There wasn't much to remove.)
+-Button to exclude unpopular words for kanji in the Study Group window disabled when only already selected examples are shown.
+-All words marked with the red X are now excluded from the list of words of kanji, not just most of them.
+-Word study window is made larger and the box with the meaning can now show two lines for longer meanings
+-Fixed long term study list bug when an item could gain two or more decks instead of just one, unproportionally increasing the time for the next test of that item.
+-Fixed bug of custom Japanese drop down combo boxes as the border was not painted when the theme was changed to classic look on XP.
+
+--------------------------------------------------------------------------
+
+v0.331
+-Fixed the popup menu of the kanji info window. The wrong popup menu appeared.
+-Fixed division by zero bug at the 'Results'  global study list statistics.
+-Second attempt to fix the error that prevented Japanese text to appear in the search bar of the dictionary.
+
+v0.33
+-Deck and Tries statistics window won't scroll to end when they are opened in the long term study window.
+-Improved the automatic kanji reading recognition in words. In some words zkanji didn't find the right reading for the kanji, when adding a word as an example to the kanji.
+-Fixed behaviour when clicking on a header in the word list. Doesn't go up to the first item. (bug was introduced in v0.3)
+-Fixed long term study list word listing behaviour for new tests. It won't scroll line to top when right clicked.
+-Attempted fix of the dictionary search box when it didn't show up characters correctly.
+
+v0.31
+-When displaying non-Japanese characters, the clipboard now uses the same font that the dictionary uses when displaying the meaning of words.
+-Fixed small bug when right-clicking in the dictionary didn't select the clicked word when bringing up the popup menu.
+
+v0.3
+-Added kanji test for long-term study. The algorithm that determines the spacing of items is yet to be perfected, but the basic idea seems to work.
+  * Kanji are tested with words that contain them.
+  * The readings of the tested kanji in the tested words are also asked.
+  * Kanji test statistics.
+-Reworked a big part of zkanji again which means no visible changes if everything went well, but fixed a few hard to handle bugs. There can be new bugs because of this.
+-ZKanji automatically finds which kanji reading is used in which word. When a word is added as an example of a kanji, the correct reading will be selected first. The Add Example Word + button is not grayed out anymore either.
+-Added button to show/hide unpopular words for Kanji Words listing in the Study Groups window. Only the popular words were shown previously.
+-Typing of small katakana "ka" and "ke" is now possible by typing xka or xke. Changed other parts of kana typing too. Double j consonant produces mini tsu.
+-Search input box gains focus when in-tray key combination is used, even when the window was already visible.
+-Word definition editor now indicates number of definitions and the selected one in the list.
+-The popup menu will appear when selecting part of a word in the dictionary, even when the mouse was moved off the word while the mouse button is still down.
+-The checked state of kanji groups is now saved.
+-Added a primitive hiragana/katakana test.
+-Web addresses in the about box are now working as links.
+-Removing kanji from group first asks for permission to avoid accidental deletion. Multiple kanji can be deleted by selecting them.
+-Removed kanji card formats and card format dialog.
+-Kanji information window stay-on-top behaviour is now under control.
+-Fixed bug in word test when user could type and also select from 5 choices at the same time.
+-Fixed interface bug in the add word to vocabulary or dictionary dialog. The definition list window will now scroll correctly.
+-Fixed interface bug in the popup dictionary window. Now it won't try to add words to groups when double clicking on a resized column to restore its size.
+-Fixed kanji hint drawing algorithm. It won't mess up the hint window size anymore.
+-Fixed the border of the popup dictionary window, which is now always visible.
+-Fixed behaviour when deleting changed word definition. No dialog appears asking "do you want to save the canges?" when changed meaning is removed.
+-Fixed right click. Works again in kanji list when multiple kanji are selected.
+-Fixed hidden msg form. Now stays on top of other zkanji windows even when we work with another application.
+-Fixed the error when kanji popup appeared in the kanji list even when the mouse was not over any kanji.
+-Fixed bug when some buttons were enabled though they could cause error messages. Removed "add all kanji to group" button because all kanji can be selected with ctrl+a in the kanji list since the previous version.
+-Fixed window sizing. The forms forgot their size when the program was kept in the tray and never restored during its previous run.
+-Fixed bug that stopped zkanji from finding mixed katakana+kanji words in the dictionary.
+-Fixed design bug, the example sentences could gain focus in the popup window.
+-Fixed bug causing an error message when no kanji group existed while opening the Kanji To Group dialog.
+-Fixed interface bug. State of buttons for managing kanji card words did not update correctly.
+-Fixed clipboard view window size for good. Again.
+-Fixed clumsy jumping of the kanji grid scrollbar thumb button when the grid was resized.
+-Fixed error that prevented the correct drawing of the X symbol in the kanji grid when there was no definition for the given kanji.
+-Fixed dictionary search bug that caused an annoying message to pop up. The error occurred when the dictionary wanted to look up a word starting with any katakana character combination that couldn't be transformed to hiragana. For example the long vowel mark.
+-Fixed another interface bug of the scroll bars for the word listing windows. The window didn't update its contents if it was resized after scrolling to the bottom and the scroll bars disappeard, then resized again so the scroll bars appeared, and then scrolled to the bottom again.
+-Fixed problem with matching kanji reading to some words.
+-Fixed state of save button in word definition editor. Now it won't be enabled when the definition edit box is empty.
+-Fixed switching between user dictionaries, so the menu items and Alt+NUM combinations don't do anything when same dictionary is selected as before.
+
+v0.197
+** Many hidden changes once again! Kanji study is now closer than before, but I wanted to release this version to fix some bugs that were created in the last one.
+
+-Kanji and word groups are now stored in a single file. The original files won't be deleted!
+-Changed adding examples for kanji readings. A word example can only be added once.
+-Changed inflection/conjugation recognition. zkanji won't mistaken some forms:
+  * the -eru, -rareru etc. forms of verbs were counted as both ichidan and godan verbs which is obviously incorrect.
+  * Same with -tagaru.
+  * Added new inflection, the archaic negative -nu form.
+  * Added -reru as another possibility besides -rareru as the potention form.
+-Added button to place selected word example on a kanji card.
+-Only meaningful kanji readings appear in the generate word groups kanji readings list box.
+-Multiple kanji can be selected in kanji lists. Use the CTRL key to select kanji separately or the SHIFT key to select a range of kanji.
+-Kanji groups now contain kanji cards. Each card consists of the kanji and card settings, like which word appears on the card.
+-Fixed font size change in a study window word list when it was changed in the settings.
+-Fixed bug when the checkbox "Match" was clicked and the readings list did not update when changing to a different kanji
+-Fixed clipboard view window size for good.
+-Fixed serious crash that occurred when looking for eg. "sshi" and the inf button was down.
+-Fixed error where the word list started selecting kana or kanji when another form appeared upon clicking on it.
+-Fixed error that brought up a message box when a line was removed from a group.
+-Fixed not obvious bug where a kanji hint window was activated even when no kanji was under the mouse.
+
+v0.195
+
+IMPORTANT: Many changes occurred in this version of the program to make way for the upcoming kanji tests. These changes might cause unexpected errors in parts of zkanji
+that worked before without problems! I will continue to fix any errors I find during the making of zkanji.
+
+-Changed almost the whole word list code. Bugs might come up that did not exist before, but hopefully it fixes more and makes the code easier to manage.
+-Changed popupmenu mechanism for word lists. It still looks like the same, but works better.
+-Changed some main menu items in the Group menu and fixed some mouseover hints.
+-Added kanji hint window. A hint window appears when the mouse cursor moves over a kanji in a word or a kanji list.
+-Added kanji card editing controls to the study list window.
+-Lots of changes concerning word examples for kanji.
+-Changed kanji list drawing. This change won't be obvious (hopefully), but it fixes several problems when drawing slowed down and the kanji list was frozen visually.
+-When a kanji doesn't have definition in a user dictionary, the meaning appears blue in the kanji information and kanji hint windows.
+-Large kanji view won't close now, when different kanji is selected or the window is closed.
+-Added kanji definition add/edit menu item in the popup menu of word lists. Only appears for user dictionaries.
+-Fixed error that occurred when a word was deleted with the popup menu of the kanji list.
+-Fixed some other bugs I forgot to write down.
+-Fixed error in generate word list from kanji window. It couldn't open when more kanji were present.
+
+v0.19
+-Added dictionary import from file. It works with text files exported from zkanji, but only if the import format doesn't change.
+-Added menu in vocabulary to group window. Only works for user dictionaries.
+-Double click on some word lists caused error message when no word was in it.
+-The program was hidden from the taskbar in popup mode (only in the previous version). It is visible again.
+-Clipboard only pops up when no modal form is visible.
+-Changed popup menu in kanji definition window.
+-Popup menu now doesn't come up in any kanji list when right-clicking on empty space.
+-Messed with the menu of Study groups. Hopefully it will only enable valid menu items.
+-Adding more kanji with the Kanji to group dialog is now faster.
+-Added "Generate word group..." menu item to kanji list window.
+-Fixed deletion of dictionary menu item when deleting dictionary.
+-Fixed navigation with keyboard in drop down edit boxes (for dictionaries)
+-Fixed error in generate word group window where the group list wasn't filled in properly.
+-Fixed stroke order number positions, when enlarging or shrinking the size of the kanji info caused errors.
+-Fixed popup menu in modal window word lists.
+-Fixed a strange error, when zkanji was hidden it did not lose focus. The current solution is actually a hack, but I hope it will work on all systems.
+-Fixed small interface error where typing new word definition changed the kanji definition too but left half finished romaji there.
+
+
+v0.179
+-Completely rewrote part that handles stay-on-top windows, the popup windows and the application icon on the taskbar. I will only know all the effects this change causes after weeks of testing, but I hope it won't cause any problems.
+-Added button in kanji information window to enlarge current kanji.
+-Added kanji parts to kanji information window.
+-Added kanji parents (other kanji containing one kanji) to kanji information window.
+-Reordered kanji information window View menu to show real order of panels.
+-Added drop-down menu to the back button to show kanji history in the kanji information window.
+-Updated the English dictionary and the Tanaka corpus data. You need the latest full version for that to work!
+-File version is now checked when loading Tanaka corpus to match dictionary version. Corpus is not loaded when versions don't match.	
+-New item in the .ini file to turn on Tanaka corpus import and other hidden functions when "debug=1" added under a "[Debug]" section.
+-Added: The user gets error message with error code when an error occurs during startup. (at the moment only for loading the ini file and examples data, but I plan to add more)
+-Clipboard view will now appear in correct size after a font change.
+-Changed the behaviour of the kana input listbox to be easier to handle in the program.(This might cause unexpected errors, because I couldn't test it on other systems).
+-Back button on kanji information window won't change selected kanji in the Kanji list.
+-Changed the basic behaviour of modal forms. This is not throughoutly tested yet.
+-Some checks are made while loading the ini file to avoid some problems that could occur if the ini file wasn't correctly saved.
+-Kanji info accepts right mouse button on the whole window for showing menu, and the menu items have shortcut keys.
+-Fixed: Loading the settings at startup could cause problems when a font was not found in the system.
+-Fixed: An error occurred during startup if the kanji filters were restored and some boxes were checked in the kanji list window.
+-Fixed: Some user interface bugs.
+-Fixed: Moving study groups in the listbox caused an error message.
+-Fixed: Small visual bug. When many words were selected and the window lost focus, only one line was redrawn.
+-Fixed: Edit kanji definition menu item now disabled when there is no kanji in the list.
+
+v0.175
+-Added updated About box. I did not want to introduce this in a bugfix release but the fix was urgent.
+-Fixed: bug introduced in previous version. Program will fix your data when loading user dictionary!
+
+v0.173
+-Fixed: very ugly bug that caused the complete database to collapse when deleting a word.
+-Fixed: bug that did not allow to add words in a new dictionary.
+-Fixed: the program crashed when the user tried to browse an empty dictionary.
+
+v0.17
+-Added animated stroke order and Taka database. NOTE: the taka database is in a different file called zdict.zks. You need it in the data folder to see anything of the stroke order diagrams!
+-Changes in the licence.txt because of the Taka data.
+-Added stroke count in classical 2 radical search. Needs updated database for errorless results.
+-Added controls for examples on the popup window too and buttons to hide them.
+-Added question "Meaning and Kana" to word test.
+-Removed kanji parts from the kanji information window. ZKANJI.ZKP NO LONGER NEEDED! The Taka database contains information that is already included, I just have to write controls for it.
+-Removed support for some previous format (3 or 4 versions before this). Load and save your old data with version 0.15 to convert to new data format if needed. (Saving: Just change something in a group and quit the program.)
+-Clipboard and kanji info view is now hidden when starting vocabulary study.
+-Dictionary window is shown when program is maximized and translation is selected by menu item in any other window.
+-Faster radical filter dialog initialization.
+-Auxiliary adjectives are now handled as common adjectives when checking for inflections.
+-Japanese editbox can now enter dash characters with the "-" key.
+-Clipboard now does not open when program is in tray.
+-Fixed: There were no results when katakana was in the word and kanji+hiragana in the search field.
+-Fixed: ZKanji freezed when looking up some non-alphanumeric string
+-Fixed: Kanji popup key combinations in settings window
+-Fixed: Error when changing from Classical2 radical filter to a different filter. Sometimes it caused a warning message and memory problems.
+-Fixed: Changing to dictionary browsing caused an error message when the entered text couldn't be found.
+-Fixed: on auto-resize-columns the resize did not occur immediately
+-Fixed: Similar kanji navigation is now fully functional. The buttons weren't doing their job.
+-Database fix: &amp; replaced with &, &gt; replaced with >, &lt; replaced with <
+-Database fix: updated the zradfile with true stroke counts, and changed some data
+
+v0.15
+-Added a new radical lookup where the radicals can be added by typing their names.
+-New popup-menu item to move every kanji from selected words to a kanji group.
+-New button to move words from one group to another next the word groups list.
+-Word frequency is now saved in export. (The format will change, only use it for testing! - Export only works for custom dictionaries)
+-Kanji drawing is now faster in kanji list and kanji groups.
+-Tweaked the word popup menu a bit. (not much)
+-New compact view in word study review window
+-New JLPT filter in kanji list.
+-JLPT shown in kanji list status bar.
+-Button on popup dictionary to keep it visible when you change to another program. (Only when "Disappear automatically when loses focus" is checked in the settings)
+-Set custom name for vocabulary study groups when you create them.
+-Added settings for popup kanji list. It too can be activated by a key combination.
+-zkanji won't open when a dialog box is shown while it's in the tray.
+-Fixed the word filter in the dictionary. The OR button did not work perfectly before.
+-Fixed a pretty bug in the example sentence handling where the program crashed.
+-Popup kanji list is now vertically resizable.
+-New word study group is now named after the word group.
+-Changed popup menu behaviour in dictionary. When the user selects more characters the popup list will act accordingly, even if the mouse was on a kanji.
+-Dozens of other fixes and smaller changes I forgot to write down, because they seemed too trifling at the time.
+-The executable is now even bigger to show how great the program really is! (Maybe)
+
+v0.137 * You should reset running word tests when updating to this version because of changes in the test statistics!
+-Fixed bug where hiding the popup dictionary with the esc key resulted in error message.
+-Dictionary in use can be changed in the popup dictionary too with alt+number combination.
+-Add-to-vocabulary form now remembers last settings and does not depend on the currently selected group.
+-Dropdown list of japanese editbox is no longer hidden behind the popup dictionary.
+-Fixed a bug that caused an error message on pressing the escape key.
+-Fixed annoying bug in the gradual inclusion of words for word study that sometimes occurred before a new round.
+-Fixed label on new-kanji-definition window for JLPT.
+-Experimental: forcing the windows taskbar to stay on top of other windows in popup dictionary mode. * Didn't work out...
+-Added new options to the gradual word test to make word study faster and more reliable.
+-The review window now only shows checkboxes when there is a point to them. New or removed words can be grayed out.
+-Added three buttons to word study review to let Zkanji select random words for study at each round in gradual word test.
+-Probably new bugs to make life interesting.
+
+v0.135
+-Kanji information and clipboard view are now stay-on-top of popup dictionary and popup kanji list.
+-Popup kanji list now borderless. Takes up less space and looks better with rounded corners.
+-Annoying bug fixed when kanji list appeared as a useless window without controls at program startup. This occurred when the kanji list was wide enough to change the position of controls.
+-The handling of stay-on-top windows is now better.
+-Lots of bugfixes!
+
+v0.133
+-Changed behaviour of kana edit boxes in dictionary when changed from browser mode to Japanese-English or back. When changed from English->Japanese to Japanese->English the edit box won't be written over by the browser mode edit box.
+-Changed MS Sans Serif fonts to Tahoma for the ClearFont style of XP and newer versions of windows.
+-Selected dictionary won't change when adding a new word while the "Kanji groups" is active.
+-Word to vocabulary window opens when the user double-clicks on the example word list for kanji at "Kanji groups" window.
+-Zkanji can now save mistakes to a word group at vocabulary test word review.
+-Escape key hides kanji info and clipboard view even when other windows are active.
+-Base JLPT added to kanji in database. (Unfortunately this data is not present in KANJIDIC)
+-Hacked default behaviour of a window's always-on-top handling. This might cause unexpected problems eg. a needed window won't appear in the foreground etc.
+-Kanji search window can be shown when dictionary is minimized. Accessible via the popup menu.
+
+v0.13
+-Words of example sentences can be looked up in the dictionary via a popup.
+-In dictionary browsing mode the edit box now always contains the reading of the selected word.
+-Updates to the example database. It doesn't list the most common particles now and excludes some words that are obviously not in a sentence.
+-Selection and kanji lookup in the example sentence.
+-Fixed a fatal bug in the database caused by the dupliate entries of JMDict.
+
+v0.11
+-Fixed word group loading bug that occurred when a word wasn't included in an updated database.
+-Furigana is now placed at the right position when printing not monospace fonts too.
+-Updated the radical lookup table in the kanji database.
+-Fixed an error in the database, where readings with no kanji had wrong writing associated with them (eg. "reading: n'da, writing: no desu" is wrong, written form should be the same as reading)
+-Fixed a small bug in the wordgroup generator's scrollbar.
+-Added example database support. Still beta and not yet tested. Plus it lacks many features I plan to add later.
+-External .zka files not needed anymore. They are now placed in the dictionary files.
+-Many inner changes and fixes you will never get to know about, but that were important to the new example database.
+
+v0.093:
+-New checkboxes now do something too...
+-Changed Japanese-English combobox behaviour in dictionary. Fixed crash with combobox button.
+-Words listed for kanji can be matched to reading in kanji group window.
+-Word group creation from kanji can now add words with specific kanji readings.
+-Can print furigana above kanji in vocabulary printing.
+-Two new txt files are needed in the data folder for correctly finding reading of kanji in almost all words.
+-Updated the database, some kanji lost a reading or two in the previous version.
+
+v0.091:
+-In dictionary browsing mode the selected line is now on the top.
+-Added vocabulary printing with preview and vocabulary printing settings.
+-New checkboxes on kanji list window for some input boxes.
+-Add to dictionary or group dialog now shows in the status bar all the groups that the word is already in.
+-Fixed two small bugs on word group generation from kanji dialog.
+-Word regrouping dialog for study groups now has separate OK and Cancel buttons.
+-Changed the button press repeat mechanism for some buttons. (eg. The up and down buttons in the group window)
+-Before I forget: Changed version number to v0.09!
+
+v0.073:
+-Lot's of bug-fixes.
+-Dictionary browsing. It shows all words in the alphabetical order of the
+kana readings.
+-Added checkboxes to the words in the word study review window. You can now
+fix your errors and remove words from the next round in gradual inclusion.
+-Words can now be included or removed from study groups.
+-Word group creation by the kanji that are part of the words.
+-Some menu items have been moved or added.
+-Dictionary filtering added. Doesn't work for the new browsing mode.
+-Added experimental kanji export. The output might change. Use it for
+testing only.
+-Some pretty new buttons.
+-Introduced many exotic bugs...
+
+v0.05 and below:
+-This is the first "official" build. It already has most important windows
+and some preview of the features I plan to do.

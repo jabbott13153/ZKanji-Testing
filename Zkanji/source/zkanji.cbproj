@@ -1,0 +1,943 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{3271f808-bfac-40a9-a553-0df745578d09}</ProjectGuid>
+			<MainSource>zkanji.cpp</MainSource>
+			<Config Condition="'$(Config)'==''">Release</Config>
+			<ProjectVersion>12.2</ProjectVersion>
+			<Base>True</Base>
+			<Platform>Win32</Platform>
+			<AppType>Application</AppType>
+			<FrameworkType>VCL</FrameworkType>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<ILINK_DelayLoadDll>dwmapi.dll;$(ILINK_DelayLoadDll)</ILINK_DelayLoadDll>
+			<BCC_EnableCodePaging>UTF-8</BCC_EnableCodePaging>
+			<_TCHARMapping>wchar_t</_TCHARMapping>
+			<BCC_IntegerTypeEnums>true</BCC_IntegerTypeEnums>
+			<LinkPackageStatics>xmlrtl.lib;vclactnband.lib;rtl.lib;vcl.lib;vclx.lib;zpack.lib;vclimg.lib</LinkPackageStatics>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<OutputExt>exe</OutputExt>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+			<DynamicRTL>true</DynamicRTL>
+			<ProjectType>CppVCLApplication</ProjectType>
+			<PackageImports>vclx.bpi;vcl.bpi;rtl.bpi;zpack.bpi;svnui.bpi;svn.bpi</PackageImports>
+			<BCC_wpar>false</BCC_wpar>
+			<PackageLibs>xmlrtl.lib;vclactnband.lib</PackageLibs>
+			<IncludePath>$(BDS)\include;$(BDS)\include\dinkumware;$(BDS)\include\windows\vcl;$(IncludePath)</IncludePath>
+			<AllPackageLibs>rtl.lib;vcl.lib;vclx.lib;zpack.lib;xmlrtl.lib;vclactnband.lib;vclimg.lib</AllPackageLibs>
+			<ILINK_LibraryPath>$(BDS)\lib\win32\release\psdk\;$(BDS)\lib\win32\release\;$(BDS)\lib;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<Multithreaded>true</Multithreaded>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+			<BCC_wprc>true</BCC_wprc>
+			<BCC_wuse>true</BCC_wuse>
+			<BCC_wucp>true</BCC_wucp>
+			<BCC_wimp>true</BCC_wimp>
+			<BCC_wexc>true</BCC_wexc>
+			<BCC_wstl>true</BCC_wstl>
+			<BCC_wcln>true</BCC_wcln>
+			<BCC_wamp>true</BCC_wamp>
+			<BCC_wamb>true</BCC_wamb>
+			<BCC_wstv>true</BCC_wstv>
+			<BCC_wpin>true</BCC_wpin>
+			<BCC_wnod>true</BCC_wnod>
+			<BCC_wntn>true</BCC_wntn>
+			<BCC_wbcx>true</BCC_wbcx>
+			<BCC_wiac>true</BCC_wiac>
+			<BCC_wpad>true</BCC_wpad>
+			<DynamicRTL>false</DynamicRTL>
+			<FinalOutputDir>Debug</FinalOutputDir>
+			<BCC_MonitorThis>true</BCC_MonitorThis>
+			<BCC_MonitorGlobalAndStackData>true</BCC_MonitorGlobalAndStackData>
+			<BCC_MonitorInlinePtrAccess>true</BCC_MonitorInlinePtrAccess>
+			<BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+			<Defines>_DEBUG;$(Defines)</Defines>
+			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+			<ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+			<BRCC_EnableMultiByte>true</BRCC_EnableMultiByte>
+			<BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
+			<IntermediateOutputDir>Debug</IntermediateOutputDir>
+			<TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+			<BCC_StackFrames>true</BCC_StackFrames>
+			<BCC_DataAlignment>Byte</BCC_DataAlignment>
+			<BCC_IncludePath>D:\projects\XEcomponents\;$(BCC_IncludePath)</BCC_IncludePath>
+			<BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+			<ILINK_LibraryPath>$(BDS)\lib\win32\debug\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<TASM_Debugging>Full</TASM_Debugging>
+			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<FinalOutputDir>Release</FinalOutputDir>
+			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+			<BCC_SlowVirtualBasePtrs>true</BCC_SlowVirtualBasePtrs>
+			<BCC_MonitorThis>true</BCC_MonitorThis>
+			<BCC_IntegerTypeEnums>true</BCC_IntegerTypeEnums>
+			<BCC_MonitorGlobalAndStackData>true</BCC_MonitorGlobalAndStackData>
+			<BCC_MonitorInlinePtrAccess>true</BCC_MonitorInlinePtrAccess>
+			<Defines>NDEBUG;$(Defines)</Defines>
+			<DynamicRTL>false</DynamicRTL>
+			<IntermediateOutputDir>Release</IntermediateOutputDir>
+			<BCC_DataAlignment>Byte</BCC_DataAlignment>
+			<BCC_IncludePath>D:\projects\XEcomponents\;$(BCC_IncludePath)</BCC_IncludePath>
+			<TASM_Debugging>None</TASM_Debugging>
+		</PropertyGroup>
+		<ProjectExtensions>
+			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+			<Borland.ProjectType>CppVCLApplication</Borland.ProjectType>
+			<BorlandProject>
+				<CPlusPlusBuilder.Personality>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1033</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Debugging/>
+					<Parameters>
+						<Parameters Name="DebugCWD">D:\projects\zkanjiXE\Debug</Parameters>
+						<Parameters Name="RemoteHost"/>
+						<Parameters Name="RemotePath"/>
+						<Parameters Name="RemoteParams"/>
+						<Parameters Name="RemoteLauncher"/>
+						<Parameters Name="UseRemoteLauncher">False</Parameters>
+						<Parameters Name="RemoteCWD"/>
+						<Parameters Name="RemoteDebug">False</Parameters>
+						<Parameters Name="RunParams">-testrun</Parameters>
+					</Parameters>
+					<Linker>
+						<Linker Name="LibPrefix"/>
+						<Linker Name="LibSuffix"/>
+						<Linker Name="LibVersion"/>
+					</Linker>
+					<ProjectProperties>
+						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
+						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+					</ProjectProperties>
+					<Source>
+						<Source Name="MainSource">zkanji.cpp</Source>
+					</Source>
+					<HistoryLists_hlIncludePath>
+						<HistoryLists_hlIncludePath Name="Count">4</HistoryLists_hlIncludePath>
+						<HistoryLists_hlIncludePath Name="Item0">$(BDS)\include;$(BDS)\include\dinkumware;$(BDS)\include\windows\vcl;</HistoryLists_hlIncludePath>
+						<HistoryLists_hlIncludePath Name="Item1">D:\projects\zkanjiXE;$(BDS)\include;$(BDS)\include\dinkumware;$(BDS)\include\windows\vcl</HistoryLists_hlIncludePath>
+						<HistoryLists_hlIncludePath Name="Item2">$(BDS)\include;$(BDS)\include\dinkumware;$(BDS)\include\windows\vcl;D:\projects\zkanjiXE</HistoryLists_hlIncludePath>
+						<HistoryLists_hlIncludePath Name="Item3">$(BDS)\include;$(BDS)\include\dinkumware;$(BDS)\include\windows\vcl</HistoryLists_hlIncludePath>
+					</HistoryLists_hlIncludePath>
+					<HistoryLists_hlILINK_LibraryPath>
+						<HistoryLists_hlILINK_LibraryPath Name="Count">1</HistoryLists_hlILINK_LibraryPath>
+						<HistoryLists_hlILINK_LibraryPath Name="Item0">$(BDS)\lib\release;$(BDS)\lib;$(BDS)\lib\obj;$(BDS)\lib\psdk;</HistoryLists_hlILINK_LibraryPath>
+						<HistoryLists_hlILINK_LibraryPath Name="Item1">$(BDS)\lib\debug;$(BDS)\lib;$(BDS)\lib\obj;$(BDS)\lib\psdk;</HistoryLists_hlILINK_LibraryPath>
+					</HistoryLists_hlILINK_LibraryPath>
+					<HistoryLists_hlDefines>
+						<HistoryLists_hlDefines Name="Count">1</HistoryLists_hlDefines>
+						<HistoryLists_hlDefines Name="Item0">NDEBUG</HistoryLists_hlDefines>
+						<HistoryLists_hlDefines Name="Item1">_DEBUG</HistoryLists_hlDefines>
+						<HistoryLists_hlDefines Name="Item2">_DEBUG;IRREG</HistoryLists_hlDefines>
+					</HistoryLists_hlDefines>
+					<HistoryLists_hlIntermediateOutputDir>
+						<HistoryLists_hlIntermediateOutputDir Name="Count">1</HistoryLists_hlIntermediateOutputDir>
+						<HistoryLists_hlIntermediateOutputDir Name="Item0">Release</HistoryLists_hlIntermediateOutputDir>
+						<HistoryLists_hlIntermediateOutputDir Name="Item1">Debug</HistoryLists_hlIntermediateOutputDir>
+					</HistoryLists_hlIntermediateOutputDir>
+					<HistoryLists_hlBCC_MaxIdentifierLength>
+						<HistoryLists_hlBCC_MaxIdentifierLength Name="Count">1</HistoryLists_hlBCC_MaxIdentifierLength>
+						<HistoryLists_hlBCC_MaxIdentifierLength Name="Item0">250</HistoryLists_hlBCC_MaxIdentifierLength>
+					</HistoryLists_hlBCC_MaxIdentifierLength>
+					<HistoryLists_hlILINK_MaxErrors>
+						<HistoryLists_hlILINK_MaxErrors Name="Count">1</HistoryLists_hlILINK_MaxErrors>
+						<HistoryLists_hlILINK_MaxErrors Name="Item0">0</HistoryLists_hlILINK_MaxErrors>
+					</HistoryLists_hlILINK_MaxErrors>
+					<HistoryLists_hlILINK_FileAlignment>
+						<HistoryLists_hlILINK_FileAlignment Name="Count">1</HistoryLists_hlILINK_FileAlignment>
+						<HistoryLists_hlILINK_FileAlignment Name="Item0">0x200</HistoryLists_hlILINK_FileAlignment>
+					</HistoryLists_hlILINK_FileAlignment>
+					<HistoryLists_hlILINK_ObjectAlignment>
+						<HistoryLists_hlILINK_ObjectAlignment Name="Count">1</HistoryLists_hlILINK_ObjectAlignment>
+						<HistoryLists_hlILINK_ObjectAlignment Name="Item0">4096</HistoryLists_hlILINK_ObjectAlignment>
+					</HistoryLists_hlILINK_ObjectAlignment>
+					<HistoryLists_hlILINK_BaseAddress>
+						<HistoryLists_hlILINK_BaseAddress Name="Count">1</HistoryLists_hlILINK_BaseAddress>
+						<HistoryLists_hlILINK_BaseAddress Name="Item0">0x00400000</HistoryLists_hlILINK_BaseAddress>
+					</HistoryLists_hlILINK_BaseAddress>
+					<HistoryLists_hlILINK_HeapCommitSize>
+						<HistoryLists_hlILINK_HeapCommitSize Name="Count">1</HistoryLists_hlILINK_HeapCommitSize>
+						<HistoryLists_hlILINK_HeapCommitSize Name="Item0">0x00001000</HistoryLists_hlILINK_HeapCommitSize>
+					</HistoryLists_hlILINK_HeapCommitSize>
+					<HistoryLists_hlILINK_HeapReserveSize>
+						<HistoryLists_hlILINK_HeapReserveSize Name="Count">1</HistoryLists_hlILINK_HeapReserveSize>
+						<HistoryLists_hlILINK_HeapReserveSize Name="Item0">0x00100000</HistoryLists_hlILINK_HeapReserveSize>
+					</HistoryLists_hlILINK_HeapReserveSize>
+					<HistoryLists_hlILINK_StackCommitSize>
+						<HistoryLists_hlILINK_StackCommitSize Name="Count">1</HistoryLists_hlILINK_StackCommitSize>
+						<HistoryLists_hlILINK_StackCommitSize Name="Item0">0x00002000</HistoryLists_hlILINK_StackCommitSize>
+					</HistoryLists_hlILINK_StackCommitSize>
+					<HistoryLists_hlILINK_StackReserveSize>
+						<HistoryLists_hlILINK_StackReserveSize Name="Count">1</HistoryLists_hlILINK_StackReserveSize>
+						<HistoryLists_hlILINK_StackReserveSize Name="Item0">0x00100000</HistoryLists_hlILINK_StackReserveSize>
+					</HistoryLists_hlILINK_StackReserveSize>
+					<HistoryLists_hlDCC_CodePage>
+						<HistoryLists_hlDCC_CodePage Name="Count">1</HistoryLists_hlDCC_CodePage>
+						<HistoryLists_hlDCC_CodePage Name="Item0">0</HistoryLists_hlDCC_CodePage>
+					</HistoryLists_hlDCC_CodePage>
+					<HistoryLists_hlTASM_HashTableCapacity>
+						<HistoryLists_hlTASM_HashTableCapacity Name="Count">1</HistoryLists_hlTASM_HashTableCapacity>
+						<HistoryLists_hlTASM_HashTableCapacity Name="Item0">8192</HistoryLists_hlTASM_HashTableCapacity>
+					</HistoryLists_hlTASM_HashTableCapacity>
+					<HistoryLists_hlTASM_MaxSymbolLength>
+						<HistoryLists_hlTASM_MaxSymbolLength Name="Count">1</HistoryLists_hlTASM_MaxSymbolLength>
+						<HistoryLists_hlTASM_MaxSymbolLength Name="Item0">12</HistoryLists_hlTASM_MaxSymbolLength>
+					</HistoryLists_hlTASM_MaxSymbolLength>
+					<HistoryLists_hlTASM_Passes>
+						<HistoryLists_hlTASM_Passes Name="Count">1</HistoryLists_hlTASM_Passes>
+						<HistoryLists_hlTASM_Passes Name="Item0">1</HistoryLists_hlTASM_Passes>
+					</HistoryLists_hlTASM_Passes>
+					<HistoryLists_hlTASM_VersionId>
+						<HistoryLists_hlTASM_VersionId Name="Count">1</HistoryLists_hlTASM_VersionId>
+						<HistoryLists_hlTASM_VersionId Name="Item0">0</HistoryLists_hlTASM_VersionId>
+					</HistoryLists_hlTASM_VersionId>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclbcbsmp150.bpl">Embarcadero Sample Controls Design Time Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDS)\RaveReports\Lib\dclRave.bpl">Rave Reports 9.0 BE Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\bcbie150.bpl">Embarcadero C++Builder Internet Explorer Components Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcltee9150.bpl">TeeChart Standard 9 Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\applet150.bpl">Embarcadero Control Panel Applet Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcl31w150.bpl">Delphi 1.0 Compatibility Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclact150.bpl">Embarcadero ActionBar Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclbde150.bpl">Embarcadero BDE DB Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclemacsedit150.bpl">Embarcadero Editor Emacs Enhancements</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclmlwiz150.bpl">Embarcadero Markup Language Wizards</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclsmpedit150.bpl">Embarcadero Editor Script Enhancements</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcltouch150.bpl">Embarcadero Touch Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\samplevisualizers150.bpl">Embarcadero Sample Debugger Visualizers</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclmcn150.bpl">Embarcadero DataSnap Connection Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclib150.bpl">Embarcadero InterBase Express Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclado150.bpl">Embarcadero ADO DB Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclIndyProtocols150.bpl">Indy 10 Protocols Design Time</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclIntraweb_110_150.bpl">VCL for the Web 11.0 Design Package for Embarcadero RAD Studio XE</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclie150.bpl">Internet Explorer Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclwebsnap150.bpl">Embarcadero WebSnap Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclsoap150.bpl">Embarcadero SOAP Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclribbon150.bpl">Embarcadero Ribbon Controls</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclDataSnapIndy10ServerTransport150.bpl">Embarcadero DBExpress DataSnap Server Transport Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclDataSnapProviderClient150.bpl">Embarcadero DBExpress DataSnap Provider Client Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclDataSnapClient150.bpl">Embarcadero DBExpress DataSnap Client Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclDataSnapServer150.bpl">Embarcadero DBExpress DataSnap Server Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclWindowsAzureManagement150.bpl">Embarcadero Windows Azure management components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclDeployCloud150.bpl">Embarcadero Deploy to the Cloud</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclDBXDrivers150.bpl">Embarcadero Driver Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclDBXDriversEnt150.bpl">Embarcadero Enterprise Driver Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcldbxcds150.bpl">Embarcadero SimpleDataset Component (DBX)</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files (x86)\Raize\CS4\Bin\VCL\CodeSiteExpressVcl_Design150.bpl">CodeSite Express 4.6.1</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\bcboffice2k150.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\bcbofficexp150.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+					</Excluded_Packages>
+					<HistoryLists_hlBCC_IncludePath>
+						<HistoryLists_hlBCC_IncludePath Name="Count">1</HistoryLists_hlBCC_IncludePath>
+						<HistoryLists_hlBCC_IncludePath Name="Item0">D:\projects\XEcomponents\</HistoryLists_hlBCC_IncludePath>
+					</HistoryLists_hlBCC_IncludePath>
+					<HistoryLists_hlDCC_Define>
+						<HistoryLists_hlDCC_Define Name="Count">1</HistoryLists_hlDCC_Define>
+						<HistoryLists_hlDCC_Define Name="Item0">DEBUG</HistoryLists_hlDCC_Define>
+					</HistoryLists_hlDCC_Define>
+					<HistoryLists_hlILINK_DelayLoadDll>
+						<HistoryLists_hlILINK_DelayLoadDll Name="Count">1</HistoryLists_hlILINK_DelayLoadDll>
+						<HistoryLists_hlILINK_DelayLoadDll Name="Item0">dwmapi.dll</HistoryLists_hlILINK_DelayLoadDll>
+					</HistoryLists_hlILINK_DelayLoadDll>
+				</CPlusPlusBuilder.Personality>
+				<ModelSupport>False</ModelSupport>
+				<Platforms>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+		<ItemGroup>
+			<LibFiles Include="d:\programs\Embarcadero\RAD Studio\8.0\lib\win32\release\psdk\GdiPlus.lib">
+				<BuildOrder>95</BuildOrder>
+			</LibFiles>
+			<LibFiles Include="D:\programs\Embarcadero\RAD Studio\8.0\lib\win32\release\psdk\shlwapi.lib">
+				<IgnorePath>true</IgnorePath>
+				<BuildOrder>114</BuildOrder>
+			</LibFiles>
+			<LibFiles Include="d:\programs\Embarcadero\RAD Studio\8.0\lib\win32\release\ws2_32.lib">
+				<BuildOrder>94</BuildOrder>
+			</LibFiles>
+			<CppCompile Include="alphaimagelist.cpp">
+				<DependentOn>alphaimagelist.h</DependentOn>
+				<BuildOrder>98</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="angle.cpp">
+				<DependentOn>angle.h</DependentOn>
+				<BuildOrder>84</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="baseform.cpp">
+				<DependentOn>baseform.h</DependentOn>
+				<BuildOrder>4</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="bits.cpp">
+				<DependentOn>bits.h</DependentOn>
+				<BuildOrder>12</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="boxobj.cpp">
+				<DependentOn>boxobj.h</DependentOn>
+				<BuildOrder>73</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="checktreeview.cpp">
+				<DependentOn>checktreeview.h</DependentOn>
+				<BuildOrder>110</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="clipview.cpp">
+				<Form>fClipboard</Form>
+				<DependentOn>clipview.h</DependentOn>
+				<BuildOrder>72</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="closebutton.cpp">
+				<DependentOn>closebutton.h</DependentOn>
+				<BuildOrder>82</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="collection.cpp">
+				<DependentOn>collection.h</DependentOn>
+				<BuildOrder>22</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="controlimages.cpp">
+				<Form>cdata</Form>
+				<DesignClass>TDataModule</DesignClass>
+				<DependentOn>controlimages.h</DependentOn>
+				<BuildOrder>99</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="customgrid.cpp">
+				<DependentOn>customgrid.h</DependentOn>
+				<BuildOrder>13</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="customlist.cpp">
+				<DependentOn>customlist.h</DependentOn>
+				<BuildOrder>42</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="dictimport.cpp">
+				<Form>fDictImport</Form>
+				<DependentOn>dictimport.h</DependentOn>
+				<BuildOrder>125</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="dictquery.cpp">
+				<Form>fDictQuery</Form>
+				<DependentOn>dictquery.h</DependentOn>
+				<BuildOrder>127</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="dictsel.cpp">
+				<Form>fDictSel</Form>
+				<DependentOn>dictsel.h</DependentOn>
+				<BuildOrder>121</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="dictupdater.cpp">
+				<Form>fDictUpdater</Form>
+				<DependentOn>dictupdater.h</DependentOn>
+				<BuildOrder>119</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="docker.cpp">
+				<Form>fDock</Form>
+				<DependentOn>docker.h</DependentOn>
+				<BuildOrder>88</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="drawscroll.cpp">
+				<DependentOn>drawscroll.h</DependentOn>
+				<BuildOrder>36</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="dropdown.cpp">
+				<Form>fDropDown</Form>
+				<DependentOn>dropdown.h</DependentOn>
+				<BuildOrder>74</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="dummymainform.cpp">
+				<Form>ACME</Form>
+				<DependentOn>dummymainform.h</DependentOn>
+				<BuildOrder>111</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="elementedit.cpp">
+				<Form>fEditElem</Form>
+				<DependentOn>elementedit.h</DependentOn>
+				<BuildOrder>75</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="elementpoints.cpp">
+				<DependentOn>elementpoints.h</DependentOn>
+				<BuildOrder>86</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="elementselector.cpp">
+				<Form>fSelectElem</Form>
+				<DependentOn>elementselector.h</DependentOn>
+				<BuildOrder>77</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="elementsettings.cpp">
+				<Form>fElemSettings</Form>
+				<DependentOn>elementsettings.h</DependentOn>
+				<BuildOrder>76</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="exportform.cpp">
+				<Form>fExport</Form>
+				<DependentOn>exportform.h</DependentOn>
+				<BuildOrder>120</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="fastbuffer.cpp">
+				<DependentOn>fastbuffer.h</DependentOn>
+				<BuildOrder>3</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="gaplist.cpp">
+				<DependentOn>gaplist.h</DependentOn>
+				<BuildOrder>2</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="gdipbmp.cpp">
+				<DependentOn>gdipbmp.h</DependentOn>
+				<BuildOrder>106</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="gengraph.cpp">
+				<DependentOn>gengraph.h</DependentOn>
+				<BuildOrder>103</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="genworddata.cpp">
+				<DependentOn>genworddata.h</DependentOn>
+				<BuildOrder>109</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="groupadd.cpp">
+				<Form>fWordToGroup</Form>
+				<DependentOn>groupadd.h</DependentOn>
+				<BuildOrder>104</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="grouplist.cpp">
+				<Form>fGroup</Form>
+				<DependentOn>grouplist.h</DependentOn>
+				<BuildOrder>9</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="import.cpp">
+				<Form>fImporter</Form>
+				<DependentOn>import.h</DependentOn>
+				<BuildOrder>129</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="importdict.cpp">
+				<Form>fImportDict</Form>
+				<DependentOn>importdict.h</DependentOn>
+				<BuildOrder>126</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="importexsubst.cpp">
+				<Form>fExampleSub</Form>
+				<DependentOn>importexsubst.h</DependentOn>
+				<BuildOrder>128</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="importgroupchoice.cpp">
+				<Form>fImportGroupChoice</Form>
+				<DependentOn>importgroupchoice.h</DependentOn>
+				<BuildOrder>124</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="importgroups.cpp">
+				<Form>fImportGroups</Form>
+				<DependentOn>importgroups.h</DependentOn>
+				<BuildOrder>122</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="importquery.cpp">
+				<Form>fImportQuery</Form>
+				<DependentOn>importquery.h</DependentOn>
+				<BuildOrder>25</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="intlist.cpp">
+				<DependentOn>intlist.h</DependentOn>
+				<BuildOrder>102</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="jlpteditor.cpp">
+				<Form>frmJLPTEdit</Form>
+				<DependentOn>jlpteditor.h</DependentOn>
+				<BuildOrder>108</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="kanapractice.cpp">
+				<Form>fKana</Form>
+				<DependentOn>kanapractice.h</DependentOn>
+				<BuildOrder>45</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="kanatest.cpp">
+				<Form>fKanaTest</Form>
+				<DependentOn>kanatest.h</DependentOn>
+				<BuildOrder>54</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="kanawritingtest.cpp">
+				<Form>fKanaWriting</Form>
+				<DependentOn>kanawritingtest.h</DependentOn>
+				<BuildOrder>118</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="kanji.cpp">
+				<DependentOn>kanji.h</DependentOn>
+				<BuildOrder>5</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="kanjicard.cpp">
+				<DependentOn>kanjicard.h</DependentOn>
+				<BuildOrder>26</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="kanjidef.cpp">
+				<Form>fDef</Form>
+				<DependentOn>kanjidef.h</DependentOn>
+				<BuildOrder>61</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="kanjidefimport.cpp">
+				<Form>fKanjiDefImport</Form>
+				<DependentOn>kanjidefimport.h</DependentOn>
+				<BuildOrder>127</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="kanjiedit.cpp">
+				<DependentOn>kanjiedit.h</DependentOn>
+				<BuildOrder>17</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="kanjielement.cpp">
+				<DependentOn>kanjielement.h</DependentOn>
+				<BuildOrder>8</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="kanjiform.cpp">
+				<Form>fKToGroup</Form>
+				<DependentOn>kanjiform.h</DependentOn>
+				<BuildOrder>56</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="kanjigrid.cpp">
+				<DependentOn>kanjigrid.h</DependentOn>
+				<BuildOrder>15</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="kanjigroup.cpp">
+				<DependentOn>kanjigroup.h</DependentOn>
+				<BuildOrder>16</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="kanjihint.cpp">
+				<DependentOn>kanjihint.h</DependentOn>
+				<BuildOrder>55</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="kanjiinfo.cpp">
+				<Form>fInfo</Form>
+				<DependentOn>kanjiinfo.h</DependentOn>
+				<BuildOrder>67</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="kanjilist.cpp">
+				<Form>fKanji</Form>
+				<DependentOn>kanjilist.h</DependentOn>
+				<BuildOrder>18</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="kanjiobj.cpp">
+				<DependentOn>kanjiobj.h</DependentOn>
+				<BuildOrder>11</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="lineobj.cpp">
+				<DependentOn>lineobj.h</DependentOn>
+				<BuildOrder>59</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="listcontrols.cpp">
+				<DependentOn>listcontrols.h</DependentOn>
+				<BuildOrder>107</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="listimport.cpp">
+				<Form>fListImport</Form>
+				<DependentOn>listimport.h</DependentOn>
+				<BuildOrder>97</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="localeinfo.cpp">
+				<DependentOn>localeinfo.h</DependentOn>
+				<BuildOrder>91</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="main.cpp">
+				<Form>fMain</Form>
+				<DependentOn>main.h</DependentOn>
+				<BuildOrder>20</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="minmax.cpp">
+				<DependentOn>minmax.h</DependentOn>
+				<BuildOrder>79</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="modallist.cpp">
+				<DependentOn>modallist.h</DependentOn>
+				<BuildOrder>24</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="module.cpp">
+				<Form>data</Form>
+				<DesignClass>TDataModule</DesignClass>
+				<DependentOn>module.h</DependentOn>
+				<BuildOrder>66</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="mouseevent.cpp">
+				<DependentOn>mouseevent.h</DependentOn>
+				<BuildOrder>38</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="mouseovers.cpp">
+				<DependentOn>mouseovers.h</DependentOn>
+				<BuildOrder>108</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="msgform.cpp">
+				<Form>fMsg</Form>
+				<DependentOn>msgform.h</DependentOn>
+				<BuildOrder>35</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="myfonts.cpp">
+				<DependentOn>myfonts.h</DependentOn>
+				<BuildOrder>29</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="newword.cpp">
+				<Form>fNewWord</Form>
+				<DependentOn>newword.h</DependentOn>
+				<BuildOrder>71</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="numedit.cpp">
+				<DependentOn>numedit.h</DependentOn>
+				<BuildOrder>39</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="numinput.cpp">
+				<Form>fNumInput</Form>
+				<DependentOn>numinput.h</DependentOn>
+				<BuildOrder>40</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="popupdict.cpp">
+				<Form>fPopupDict</Form>
+				<DependentOn>popupdict.h</DependentOn>
+				<BuildOrder>62</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="qsrt.cpp">
+				<DependentOn>qsrt.h</DependentOn>
+				<BuildOrder>80</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="radicals.cpp">
+				<Form>fRadicals</Form>
+				<DependentOn>radicals.h</DependentOn>
+				<BuildOrder>21</BuildOrder>
+			</CppCompile>
+			<RcItem Include="rc\N1.ico">
+				<ResourceType>ICON</ResourceType>
+				<ResourceId>N1</ResourceId>
+			</RcItem>
+			<RcItem Include="rc\N2.ico">
+				<ResourceType>ICON</ResourceType>
+				<ResourceId>N2</ResourceId>
+			</RcItem>
+			<RcItem Include="rc\N3.ico">
+				<ResourceType>ICON</ResourceType>
+				<ResourceId>N3</ResourceId>
+			</RcItem>
+			<CppCompile Include="recobj.cpp">
+				<DependentOn>recobj.h</DependentOn>
+				<BuildOrder>85</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="recognizer.cpp">
+				<Form>fRecognize</Form>
+				<DependentOn>recognizer.h</DependentOn>
+				<BuildOrder>81</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="redefine.cpp">
+				<Form>fRedefine</Form>
+				<DependentOn>redefine.h</DependentOn>
+				<BuildOrder>46</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="regroup.cpp">
+				<Form>fRegroup</Form>
+				<DependentOn>regroup.h</DependentOn>
+				<BuildOrder>49</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="repetition.cpp">
+				<DependentOn>repetition.h</DependentOn>
+				<BuildOrder>23</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="romajizer.cpp">
+				<DependentOn>romajizer.h</DependentOn>
+				<BuildOrder>30</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="searchtree.cpp">
+				<DependentOn>searchtree.h</DependentOn>
+				<BuildOrder>31</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="sentences.cpp">
+				<DependentOn>sentences.h</DependentOn>
+				<BuildOrder>34</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="settings.cpp">
+				<DependentOn>settings.h</DependentOn>
+				<BuildOrder>87</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="settingswindow.cpp">
+				<Form>fSettings</Form>
+				<DependentOn>settingswindow.h</DependentOn>
+				<BuildOrder>10</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="shadow.cpp">
+				<DependentOn>shadow.h</DependentOn>
+				<BuildOrder>112</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="sitemanager.cpp">
+				<Form>fSites</Form>
+				<DependentOn>sitemanager.h</DependentOn>
+				<BuildOrder>92</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="socket.cpp">
+				<DependentOn>socket.h</DependentOn>
+				<BuildOrder>93</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="sodpopup.cpp">
+				<Form>fSOD</Form>
+				<DependentOn>sodpopup.h</DependentOn>
+				<BuildOrder>107</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="statobj.cpp">
+				<DependentOn>statobj.h</DependentOn>
+				<BuildOrder>51</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="stats.cpp">
+				<Form>fStats</Form>
+				<DependentOn>stats.h</DependentOn>
+				<BuildOrder>33</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="strokebase.cpp">
+				<DependentOn>strokebase.h</DependentOn>
+				<BuildOrder>83</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="studygroup.cpp">
+				<Form>fWordStudy</Form>
+				<DependentOn>studygroup.h</DependentOn>
+				<BuildOrder>52</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="studylist.cpp">
+				<DependentOn>studylist.h</DependentOn>
+				<BuildOrder>57</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="studyreading.cpp">
+				<Form>fKStudy</Form>
+				<DependentOn>studyreading.h</DependentOn>
+				<BuildOrder>65</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="studyroom.cpp">
+				<Form>fWStudy</Form>
+				<DependentOn>studyroom.h</DependentOn>
+				<BuildOrder>14</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="taskbar.cpp">
+				<DependentOn>taskbar.h</DependentOn>
+				<BuildOrder>113</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="templatelist.cpp">
+				<DependentOn>templatelist.h</DependentOn>
+				<BuildOrder>41</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="unicodehint.cpp">
+				<Form>HintFormW</Form>
+				<DependentOn>unicodehint.h</DependentOn>
+				<BuildOrder>37</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="update.cpp">
+				<Form>fUpdate</Form>
+				<DependentOn>update.h</DependentOn>
+				<BuildOrder>96</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="vocabform.cpp">
+				<Form>fAddVocab</Form>
+				<DependentOn>vocabform.h</DependentOn>
+				<BuildOrder>50</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="vocabprint.cpp">
+				<Form>fVocabPrint</Form>
+				<DependentOn>vocabprint.h</DependentOn>
+				<BuildOrder>64</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="warningbubble.cpp">
+				<Form>fBubble</Form>
+				<DependentOn>warningbubble.h</DependentOn>
+				<BuildOrder>105</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="wordfilter.cpp">
+				<Form>fFilter</Form>
+				<DependentOn>wordfilter.h</DependentOn>
+				<BuildOrder>68</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="wordgen.cpp">
+				<Form>fGen</Form>
+				<DependentOn>wordgen.h</DependentOn>
+				<BuildOrder>69</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="wordgrid.cpp">
+				<DependentOn>wordgrid.h</DependentOn>
+				<BuildOrder>53</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="wordgroup.cpp">
+				<DependentOn>wordgroup.h</DependentOn>
+				<BuildOrder>32</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="wordgroupstudy.cpp">
+				<DependentOn>wordgroupstudy.h</DependentOn>
+				<BuildOrder>19</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="wordlist.cpp">
+				<Form>fDict</Form>
+				<DependentOn>wordlist.h</DependentOn>
+				<BuildOrder>63</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="wordlistbox.cpp">
+				<Form>fWordBox</Form>
+				<DependentOn>wordlistbox.h</DependentOn>
+				<BuildOrder>58</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="wordobj.cpp">
+				<DependentOn>wordobj.h</DependentOn>
+				<BuildOrder>47</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="wordreview.cpp">
+				<Form>fWReview</Form>
+				<DependentOn>wordreview.h</DependentOn>
+				<BuildOrder>48</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="words.cpp">
+				<DependentOn>words.h</DependentOn>
+				<BuildOrder>44</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="wordstudylist.cpp">
+				<Form>fStudyList</Form>
+				<DependentOn>wordstudylist.h</DependentOn>
+				<BuildOrder>100</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="wordstudytest.cpp">
+				<Form>fTest</Form>
+				<DependentOn>wordstudytest.h</DependentOn>
+				<BuildOrder>101</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="writeobj.cpp">
+				<DependentOn>writeobj.h</DependentOn>
+				<BuildOrder>89</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="writetest.cpp">
+				<Form>fWriter</Form>
+				<DependentOn>writetest.h</DependentOn>
+				<BuildOrder>90</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="zdefines.cpp">
+				<DependentOn>zdefines.h</DependentOn>
+				<BuildOrder>6</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="zkanji.cpp">
+				<BuildOrder>0</BuildOrder>
+			</CppCompile>
+			<ResFiles Include="zkanji.res">
+				<BuildOrder>1</BuildOrder>
+			</ResFiles>
+			<CppCompile Include="zkformats.cpp">
+				<DependentOn>zkformats.h</DependentOn>
+				<BuildOrder>70</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="zmenu.cpp">
+				<DependentOn>zmenu.h</DependentOn>
+				<BuildOrder>28</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="zrads.cpp">
+				<DependentOn>zrads.h</DependentOn>
+				<BuildOrder>27</BuildOrder>
+			</CppCompile>
+			<FormResources Include="recognizer.dfm"/>
+			<FormResources Include="regroup.dfm"/>
+			<FormResources Include="redefine.dfm"/>
+			<FormResources Include="sodpopup.dfm"/>
+			<FormResources Include="stats.dfm"/>
+			<FormResources Include="settingswindow.dfm"/>
+			<FormResources Include="sitemanager.dfm"/>
+			<FormResources Include="msgform.dfm"/>
+			<FormResources Include="newword.dfm"/>
+			<FormResources Include="module.dfm"/>
+			<FormResources Include="radicals.dfm"/>
+			<FormResources Include="numinput.dfm"/>
+			<FormResources Include="popupdict.dfm"/>
+			<FormResources Include="wordreview.dfm"/>
+			<FormResources Include="wordstudytest.dfm"/>
+			<FormResources Include="wordstudylist.dfm"/>
+			<FormResources Include="wordlist.dfm"/>
+			<FormResources Include="wordlistbox.dfm"/>
+			<FormResources Include="writetest.dfm"/>
+			<FormResources Include="studyroom.dfm"/>
+			<FormResources Include="unicodehint.dfm"/>
+			<FormResources Include="studygroup.dfm"/>
+			<FormResources Include="studyreading.dfm"/>
+			<FormResources Include="wordgen.dfm"/>
+			<FormResources Include="wordfilter.dfm"/>
+			<FormResources Include="vocabform.dfm"/>
+			<FormResources Include="update.dfm"/>
+			<FormResources Include="warningbubble.dfm"/>
+			<FormResources Include="vocabprint.dfm"/>
+			<FormResources Include="dropdown.dfm"/>
+			<FormResources Include="elementedit.dfm"/>
+			<FormResources Include="dummymainform.dfm"/>
+			<FormResources Include="dictsel.dfm"/>
+			<FormResources Include="dictquery.dfm"/>
+			<FormResources Include="docker.dfm"/>
+			<FormResources Include="dictupdater.dfm"/>
+			<FormResources Include="elementselector.dfm"/>
+			<FormResources Include="exportform.dfm"/>
+			<FormResources Include="elementsettings.dfm"/>
+			<FormResources Include="controlimages.dfm"/>
+			<FormResources Include="dictimport.dfm"/>
+			<FormResources Include="clipview.dfm"/>
+			<FormResources Include="kanjiform.dfm"/>
+			<FormResources Include="kanjidefimport.dfm"/>
+			<FormResources Include="kanjidef.dfm"/>
+			<FormResources Include="listimport.dfm"/>
+			<FormResources Include="main.dfm"/>
+			<FormResources Include="kanjilist.dfm"/>
+			<FormResources Include="kanjiinfo.dfm"/>
+			<FormResources Include="importexsubst.dfm"/>
+			<FormResources Include="importdict.dfm"/>
+			<FormResources Include="importgroups.dfm"/>
+			<FormResources Include="importgroupchoice.dfm"/>
+			<FormResources Include="groupadd.dfm"/>
+			<FormResources Include="import.dfm"/>
+			<FormResources Include="grouplist.dfm"/>
+			<FormResources Include="kanawritingtest.dfm"/>
+			<FormResources Include="kanatest.dfm"/>
+			<FormResources Include="importquery.dfm"/>
+			<FormResources Include="kanapractice.dfm"/>
+			<FormResources Include="jlpteditor.dfm"/>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj"/>
+	</Project>

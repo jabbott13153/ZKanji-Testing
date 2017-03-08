@@ -1,0 +1,21 @@
+zkanji v0.731 Copyright (c) 2007-2013 Sólyom Zoltán
+---------------------------------------------------
+
+* Licence details *
+
+About the zkanji source files
+===================================================
+zkanji is free software. All source files are licensed under
+the Common Developement And Distribution License (CDDL) v1.0
+
+zkanji comes with absolutely NO warranty and/or liability.
+
+* IMPORTANT! *
+===================================================
+The CDDL is NOT compatible with the GPL. Please contact me in
+case you wanted to use something from zkanji in a GPLed
+program.
+
+----------------------------------------------------
+homepage: http://zkanji.sourceforge.net
+e-mail: z-one@freemail.hu

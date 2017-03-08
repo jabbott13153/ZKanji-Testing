@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{860FD107-03A0-45C2-8E3C-6B68EDDBD95C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ZkanjiSourceCode</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\alphaimagelist.cpp" />
+    <ClCompile Include="..\..\source\angle.cpp" />
+    <ClCompile Include="..\..\source\baseform.cpp" />
+    <ClCompile Include="..\..\source\bits.cpp" />
+    <ClCompile Include="..\..\source\boxobj.cpp" />
+    <ClCompile Include="..\..\source\checktreeview.cpp" />
+    <ClCompile Include="..\..\source\clipview.cpp" />
+    <ClCompile Include="..\..\source\closebutton.cpp" />
+    <ClCompile Include="..\..\source\collection.cpp" />
+    <ClCompile Include="..\..\source\controlimages.cpp" />
+    <ClCompile Include="..\..\source\customgrid.cpp" />
+    <ClCompile Include="..\..\source\customlist.cpp" />
+    <ClCompile Include="..\..\source\dictimport.cpp" />
+    <ClCompile Include="..\..\source\dictquery.cpp" />
+    <ClCompile Include="..\..\source\dictsel.cpp" />
+    <ClCompile Include="..\..\source\dictupdater.cpp" />
+    <ClCompile Include="..\..\source\docker.cpp" />
+    <ClCompile Include="..\..\source\drawscroll.cpp" />
+    <ClCompile Include="..\..\source\dropdown.cpp" />
+    <ClCompile Include="..\..\source\dummymainform.cpp" />
+    <ClCompile Include="..\..\source\elementedit.cpp" />
+    <ClCompile Include="..\..\source\elementpoints.cpp" />
+    <ClCompile Include="..\..\source\elementselector.cpp" />
+    <ClCompile Include="..\..\source\elementsettings.cpp" />
+    <ClCompile Include="..\..\source\exportform.cpp" />
+    <ClCompile Include="..\..\source\fastbuffer.cpp" />
+    <ClCompile Include="..\..\source\gaplist.cpp" />
+    <ClCompile Include="..\..\source\gdipbmp.cpp" />
+    <ClCompile Include="..\..\source\gengraph.cpp" />
+    <ClCompile Include="..\..\source\genworddata.cpp" />
+    <ClCompile Include="..\..\source\groupadd.cpp" />
+    <ClCompile Include="..\..\source\grouplist.cpp" />
+    <ClCompile Include="..\..\source\import.cpp" />
+    <ClCompile Include="..\..\source\importdict.cpp" />
+    <ClCompile Include="..\..\source\importexsubst.cpp" />
+    <ClCompile Include="..\..\source\importgroupchoice.cpp" />
+    <ClCompile Include="..\..\source\importgroups.cpp" />
+    <ClCompile Include="..\..\source\importquery.cpp" />
+    <ClCompile Include="..\..\source\intlist.cpp" />
+    <ClCompile Include="..\..\source\jlpteditor.cpp" />
+    <ClCompile Include="..\..\source\kanapractice.cpp" />
+    <ClCompile Include="..\..\source\kanatest.cpp" />
+    <ClCompile Include="..\..\source\kanawritingtest.cpp" />
+    <ClCompile Include="..\..\source\kanji.cpp" />
+    <ClCompile Include="..\..\source\kanjicard.cpp" />
+    <ClCompile Include="..\..\source\kanjidef.cpp" />
+    <ClCompile Include="..\..\source\kanjidefimport.cpp" />
+    <ClCompile Include="..\..\source\kanjiedit.cpp" />
+    <ClCompile Include="..\..\source\kanjielement.cpp" />
+    <ClCompile Include="..\..\source\kanjiform.cpp" />
+    <ClCompile Include="..\..\source\kanjigrid.cpp" />
+    <ClCompile Include="..\..\source\kanjigroup.cpp" />
+    <ClCompile Include="..\..\source\kanjihint.cpp" />
+    <ClCompile Include="..\..\source\kanjiinfo.cpp" />
+    <ClCompile Include="..\..\source\kanjilist.cpp" />
+    <ClCompile Include="..\..\source\kanjiobj.cpp" />
+    <ClCompile Include="..\..\source\lineobj.cpp" />
+    <ClCompile Include="..\..\source\listcontrols.cpp" />
+    <ClCompile Include="..\..\source\listimport.cpp" />
+    <ClCompile Include="..\..\source\localeinfo.cpp" />
+    <ClCompile Include="..\..\source\main.cpp" />
+    <ClCompile Include="..\..\source\minmax.cpp" />
+    <ClCompile Include="..\..\source\modallist.cpp" />
+    <ClCompile Include="..\..\source\module.cpp" />
+    <ClCompile Include="..\..\source\mouseevent.cpp" />
+    <ClCompile Include="..\..\source\mouseovers.cpp" />
+    <ClCompile Include="..\..\source\msgform.cpp" />
+    <ClCompile Include="..\..\source\myfonts.cpp" />
+    <ClCompile Include="..\..\source\newword.cpp" />
+    <ClCompile Include="..\..\source\numedit.cpp" />
+    <ClCompile Include="..\..\source\numinput.cpp" />
+    <ClCompile Include="..\..\source\popupdict.cpp" />
+    <ClCompile Include="..\..\source\qsrt.cpp" />
+    <ClCompile Include="..\..\source\radicals.cpp" />
+    <ClCompile Include="..\..\source\recobj.cpp" />
+    <ClCompile Include="..\..\source\recognizer.cpp" />
+    <ClCompile Include="..\..\source\redefine.cpp" />
+    <ClCompile Include="..\..\source\regroup.cpp" />
+    <ClCompile Include="..\..\source\repetition.cpp" />
+    <ClCompile Include="..\..\source\romajizer.cpp" />
+    <ClCompile Include="..\..\source\searchtree.cpp" />
+    <ClCompile Include="..\..\source\sentences.cpp" />
+    <ClCompile Include="..\..\source\settings.cpp" />
+    <ClCompile Include="..\..\source\settingswindow.cpp" />
+    <ClCompile Include="..\..\source\shadow.cpp" />
+    <ClCompile Include="..\..\source\sitemanager.cpp" />
+    <ClCompile Include="..\..\source\socket.cpp" />
+    <ClCompile Include="..\..\source\sodpopup.cpp" />
+    <ClCompile Include="..\..\source\statobj.cpp" />
+    <ClCompile Include="..\..\source\stats.cpp" />
+    <ClCompile Include="..\..\source\strokebase.cpp" />
+    <ClCompile Include="..\..\source\studygroup.cpp" />
+    <ClCompile Include="..\..\source\studylist.cpp" />
+    <ClCompile Include="..\..\source\studyreading.cpp" />
+    <ClCompile Include="..\..\source\studyroom.cpp" />
+    <ClCompile Include="..\..\source\taskbar.cpp" />
+    <ClCompile Include="..\..\source\templatelist.cpp" />
+    <ClCompile Include="..\..\source\unicodehint.cpp" />
+    <ClCompile Include="..\..\source\update.cpp" />
+    <ClCompile Include="..\..\source\vocabform.cpp" />
+    <ClCompile Include="..\..\source\vocabprint.cpp" />
+    <ClCompile Include="..\..\source\warningbubble.cpp" />
+    <ClCompile Include="..\..\source\wordfilter.cpp" />
+    <ClCompile Include="..\..\source\wordgen.cpp" />
+    <ClCompile Include="..\..\source\wordgrid.cpp" />
+    <ClCompile Include="..\..\source\wordgroup.cpp" />
+    <ClCompile Include="..\..\source\wordgroupstudy.cpp" />
+    <ClCompile Include="..\..\source\wordlist.cpp" />
+    <ClCompile Include="..\..\source\wordlistbox.cpp" />
+    <ClCompile Include="..\..\source\wordobj.cpp" />
+    <ClCompile Include="..\..\source\wordreview.cpp" />
+    <ClCompile Include="..\..\source\words.cpp" />
+    <ClCompile Include="..\..\source\wordstudylist.cpp" />
+    <ClCompile Include="..\..\source\wordstudytest.cpp" />
+    <ClCompile Include="..\..\source\writeobj.cpp" />
+    <ClCompile Include="..\..\source\writetest.cpp" />
+    <ClCompile Include="..\..\source\zdefines.cpp" />
+    <ClCompile Include="..\..\source\zkanji.cpp" />
+    <ClCompile Include="..\..\source\zkformats.cpp" />
+    <ClCompile Include="..\..\source\zmenu.cpp" />
+    <ClCompile Include="..\..\source\zrads.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\source\alphaimagelist.h" />
+    <ClInclude Include="..\..\source\angle.h" />
+    <ClInclude Include="..\..\source\baseform.h" />
+    <ClInclude Include="..\..\source\bits.h" />
+    <ClInclude Include="..\..\source\boxobj.h" />
+    <ClInclude Include="..\..\source\checktreeview.h" />
+    <ClInclude Include="..\..\source\clipview.h" />
+    <ClInclude Include="..\..\source\closebutton.h" />
+    <ClInclude Include="..\..\source\collection.h" />
+    <ClInclude Include="..\..\source\controlimages.h" />
+    <ClInclude Include="..\..\source\customgrid.h" />
+    <ClInclude Include="..\..\source\customlist.h" />
+    <ClInclude Include="..\..\source\dictimport.h" />
+    <ClInclude Include="..\..\source\dictquery.h" />
+    <ClInclude Include="..\..\source\dictsel.h" />
+    <ClInclude Include="..\..\source\dictupdater.h" />
+    <ClInclude Include="..\..\source\docker.h" />
+    <ClInclude Include="..\..\source\drawscroll.h" />
+    <ClInclude Include="..\..\source\dropdown.h" />
+    <ClInclude Include="..\..\source\dummymainform.h" />
+    <ClInclude Include="..\..\source\elementedit.h" />
+    <ClInclude Include="..\..\source\elementpoints.h" />
+    <ClInclude Include="..\..\source\elementselector.h" />
+    <ClInclude Include="..\..\source\elementsettings.h" />
+    <ClInclude Include="..\..\source\exportform.h" />
+    <ClInclude Include="..\..\source\fastbuffer.h" />
+    <ClInclude Include="..\..\source\gaplist.h" />
+    <ClInclude Include="..\..\source\gdipbmp.h" />
+    <ClInclude Include="..\..\source\gengraph.h" />
+    <ClInclude Include="..\..\source\genworddata.h" />
+    <ClInclude Include="..\..\source\groupadd.h" />
+    <ClInclude Include="..\..\source\grouplist.h" />
+    <ClInclude Include="..\..\source\import.h" />
+    <ClInclude Include="..\..\source\importdict.h" />
+    <ClInclude Include="..\..\source\importexsubst.h" />
+    <ClInclude Include="..\..\source\importgroupchoice.h" />
+    <ClInclude Include="..\..\source\importgroups.h" />
+    <ClInclude Include="..\..\source\importquery.h" />
+    <ClInclude Include="..\..\source\intlist.h" />
+    <ClInclude Include="..\..\source\jlpteditor.h" />
+    <ClInclude Include="..\..\source\kanapractice.h" />
+    <ClInclude Include="..\..\source\kanatest.h" />
+    <ClInclude Include="..\..\source\kanawritingtest.h" />
+    <ClInclude Include="..\..\source\kanji.h" />
+    <ClInclude Include="..\..\source\kanjicard.h" />
+    <ClInclude Include="..\..\source\kanjidef.h" />
+    <ClInclude Include="..\..\source\kanjidefimport.h" />
+    <ClInclude Include="..\..\source\kanjiedit.h" />
+    <ClInclude Include="..\..\source\kanjielement.h" />
+    <ClInclude Include="..\..\source\kanjiform.h" />
+    <ClInclude Include="..\..\source\kanjigrid.h" />
+    <ClInclude Include="..\..\source\kanjigroup.h" />
+    <ClInclude Include="..\..\source\kanjihint.h" />
+    <ClInclude Include="..\..\source\kanjiinfo.h" />
+    <ClInclude Include="..\..\source\kanjilist.h" />
+    <ClInclude Include="..\..\source\kanjiobj.h" />
+    <ClInclude Include="..\..\source\lineobj.h" />
+    <ClInclude Include="..\..\source\listcontrols.h" />
+    <ClInclude Include="..\..\source\listimport.h" />
+    <ClInclude Include="..\..\source\localeinfo.h" />
+    <ClInclude Include="..\..\source\main.h" />
+    <ClInclude Include="..\..\source\minmax.h" />
+    <ClInclude Include="..\..\source\modallist.h" />
+    <ClInclude Include="..\..\source\module.h" />
+    <ClInclude Include="..\..\source\mouseevent.h" />
+    <ClInclude Include="..\..\source\mouseovers.h" />
+    <ClInclude Include="..\..\source\msgform.h" />
+    <ClInclude Include="..\..\source\myfonts.h" />
+    <ClInclude Include="..\..\source\newword.h" />
+    <ClInclude Include="..\..\source\numedit.h" />
+    <ClInclude Include="..\..\source\numinput.h" />
+    <ClInclude Include="..\..\source\popupdict.h" />
+    <ClInclude Include="..\..\source\qsrt.h" />
+    <ClInclude Include="..\..\source\radicals.h" />
+    <ClInclude Include="..\..\source\recobj.h" />
+    <ClInclude Include="..\..\source\recognizer.h" />
+    <ClInclude Include="..\..\source\redefine.h" />
+    <ClInclude Include="..\..\source\regroup.h" />
+    <ClInclude Include="..\..\source\repetition.h" />
+    <ClInclude Include="..\..\source\romajizer.h" />
+    <ClInclude Include="..\..\source\searchtree.h" />
+    <ClInclude Include="..\..\source\sentences.h" />
+    <ClInclude Include="..\..\source\settings.h" />
+    <ClInclude Include="..\..\source\settingswindow.h" />
+    <ClInclude Include="..\..\source\shadow.h" />
+    <ClInclude Include="..\..\source\sitemanager.h" />
+    <ClInclude Include="..\..\source\socket.h" />
+    <ClInclude Include="..\..\source\sodpopup.h" />
+    <ClInclude Include="..\..\source\statobj.h" />
+    <ClInclude Include="..\..\source\stats.h" />
+    <ClInclude Include="..\..\source\strokebase.h" />
+    <ClInclude Include="..\..\source\studygroup.h" />
+    <ClInclude Include="..\..\source\studylist.h" />
+    <ClInclude Include="..\..\source\studyreading.h" />
+    <ClInclude Include="..\..\source\studyroom.h" />
+    <ClInclude Include="..\..\source\taskbar.h" />
+    <ClInclude Include="..\..\source\templatelist.h" />
+    <ClInclude Include="..\..\source\unicodehint.h" />
+    <ClInclude Include="..\..\source\update.h" />
+    <ClInclude Include="..\..\source\vocabform.h" />
+    <ClInclude Include="..\..\source\vocabprint.h" />
+    <ClInclude Include="..\..\source\warningbubble.h" />
+    <ClInclude Include="..\..\source\wordfilter.h" />
+    <ClInclude Include="..\..\source\wordgen.h" />
+    <ClInclude Include="..\..\source\wordgrid.h" />
+    <ClInclude Include="..\..\source\wordgroup.h" />
+    <ClInclude Include="..\..\source\wordgroupstudy.h" />
+    <ClInclude Include="..\..\source\wordlist.h" />
+    <ClInclude Include="..\..\source\wordlistbox.h" />
+    <ClInclude Include="..\..\source\wordobj.h" />
+    <ClInclude Include="..\..\source\wordreview.h" />
+    <ClInclude Include="..\..\source\words.h" />
+    <ClInclude Include="..\..\source\wordstudylist.h" />
+    <ClInclude Include="..\..\source\wordstudytest.h" />
+    <ClInclude Include="..\..\source\writeobj.h" />
+    <ClInclude Include="..\..\source\writetest.h" />
+    <ClInclude Include="..\..\source\zdefines.h" />
+    <ClInclude Include="..\..\source\zkformats.h" />
+    <ClInclude Include="..\..\source\zmenu.h" />
+    <ClInclude Include="..\..\source\zrads.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\source\clipview.dfm" />
+    <None Include="..\..\source\controlimages.dfm" />
+    <None Include="..\..\source\dictimport.dfm" />
+    <None Include="..\..\source\dictquery.dfm" />
+    <None Include="..\..\source\dictsel.dfm" />
+    <None Include="..\..\source\dictupdater.dfm" />
+    <None Include="..\..\source\docker.dfm" />
+    <None Include="..\..\source\dropdown.dfm" />
+    <None Include="..\..\source\dummymainform.dfm" />
+    <None Include="..\..\source\elementedit.dfm" />
+    <None Include="..\..\source\elementselector.dfm" />
+    <None Include="..\..\source\elementsettings.dfm" />
+    <None Include="..\..\source\exportform.dfm" />
+    <None Include="..\..\source\groupadd.dfm" />
+    <None Include="..\..\source\grouplist.dfm" />
+    <None Include="..\..\source\import.dfm" />
+    <None Include="..\..\source\importdict.dfm" />
+    <None Include="..\..\source\importexsubst.dfm" />
+    <None Include="..\..\source\importgroupchoice.dfm" />
+    <None Include="..\..\source\importgroups.dfm" />
+    <None Include="..\..\source\importquery.dfm" />
+    <None Include="..\..\source\jlpteditor.dfm" />
+    <None Include="..\..\source\kanapractice.dfm" />
+    <None Include="..\..\source\kanatest.dfm" />
+    <None Include="..\..\source\kanawritingtest.dfm" />
+    <None Include="..\..\source\kanjidef.dfm" />
+    <None Include="..\..\source\kanjidefimport.dfm" />
+    <None Include="..\..\source\kanjiform.dfm" />
+    <None Include="..\..\source\kanjiinfo.dfm" />
+    <None Include="..\..\source\kanjilist.dfm" />
+    <None Include="..\..\source\listimport.dfm" />
+    <None Include="..\..\source\main.dfm" />
+    <None Include="..\..\source\module.dfm" />
+    <None Include="..\..\source\msgform.dfm" />
+    <None Include="..\..\source\newword.dfm" />
+    <None Include="..\..\source\numinput.dfm" />
+    <None Include="..\..\source\pentest.dfm" />
+    <None Include="..\..\source\popupdict.dfm" />
+    <None Include="..\..\source\radicals.dfm" />
+    <None Include="..\..\source\recognizer.dfm" />
+    <None Include="..\..\source\redefine.dfm" />
+    <None Include="..\..\source\regroup.dfm" />
+    <None Include="..\..\source\settingswindow.dfm" />
+    <None Include="..\..\source\sitemanager.dfm" />
+    <None Include="..\..\source\sodpopup.dfm" />
+    <None Include="..\..\source\stats.dfm" />
+    <None Include="..\..\source\studygroup.dfm" />
+    <None Include="..\..\source\studyreading.dfm" />
+    <None Include="..\..\source\studyroom.dfm" />
+    <None Include="..\..\source\unicodehint.dfm" />
+    <None Include="..\..\source\update.dfm" />
+    <None Include="..\..\source\vocabform.dfm" />
+    <None Include="..\..\source\vocabprint.dfm" />
+    <None Include="..\..\source\warningbubble.dfm" />
+    <None Include="..\..\source\wordfilter.dfm" />
+    <None Include="..\..\source\wordgen.dfm" />
+    <None Include="..\..\source\wordlist.dfm" />
+    <None Include="..\..\source\wordlistbox.dfm" />
+    <None Include="..\..\source\wordreview.dfm" />
+    <None Include="..\..\source\wordstudylist.dfm" />
+    <None Include="..\..\source\wordstudytest.dfm" />
+    <None Include="..\..\source\writetest.dfm" />
+    <None Include="..\..\source\zkanji.cbproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\..\source\zkanji.res" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\source\zkanji_resources.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
